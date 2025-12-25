@@ -56,10 +56,12 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\IngredientController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\DbConfig.cs" />
     <Compile Include="Model\Ingredient.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />

@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data.SqlClient;
+
 namespace MealFinder.Database
 {
-    internal class Db
+    public class Db
     {
+        public static SqlConnection Conn()
+        {
+            return new SqlConnection(DbConfig.ConnectionString);
+        }
     }
 }
