@@ -94,5 +94,10 @@ namespace MealFinder.View
         {
             ActivateButton(sender, RGBColors.color3);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
