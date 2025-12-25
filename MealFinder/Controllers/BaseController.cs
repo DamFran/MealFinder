@@ -4,9 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MealFinder.Controller
+using MealFinder.Database;
+using System.Data.SqlClient;
+
+namespace MealFinder.Controllers
 {
-    internal class BaseController
+    public abstract class BaseController
     {
+        protected SqlConnection GetConnection()
+        {
+            return Db.Conn();
+        }
     }
 }
+
