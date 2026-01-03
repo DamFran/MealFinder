@@ -24,6 +24,10 @@ namespace MealFinder.View
         {
             InitializeComponent();
 
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.WindowState = FormWindowState.Normal;
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(10, 60);
             leftBorderBtn.BackColor = Color.Transparent;
