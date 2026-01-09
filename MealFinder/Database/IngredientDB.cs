@@ -5,61 +5,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 namespace MealFinder.Database
 {
-    namespace MealFinder.Database
+    public class IngredientContext
     {
-        public class IngredientDB
+        public static void Insert(Ingredient i)
         {
-            public static void Add(string name, string qty, int recipeId)
+            using (DbContext db = new DbContext())
             {
-                using (SQLiteConnection conn = Db.GetConnection())
-                {
-                    conn.Open();
-
-                    string sql = @"INSERT INTO Ingredients 
-                               (IngredientName, Quantity, RecipeID)
+                string sql = @"INSERT INTO Ingredients
+                               (IngredientName, IngredientQuantity, RecipeID)
                                VALUES (@n,@q,@r)";
 
-                    using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@n", name);
-                        cmd.Parameters.AddWithValue("@q", qty);
-                        cmd.Parameters.AddWithValue("@r", recipeId);
-                        cmd.ExecuteNonQuery();
-                    }
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@n", i.IngredientName);
+                cmd.Parameters.AddWithValue("@q", i.IngredientQuantity);
+                cmd.Parameters.AddWithValue("@r", i.RecipeID);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static List<Ingredient> GetByRecipe(int recipeId)
+        {
+            List<Ingredient> list = new List<Ingredient>();
+
+            using (DbContext db = new DbContext())
+            {
+                string sql = "SELECT * FROM Ingredients WHERE RecipeID=@id";
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@id", recipeId);
+
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    Ingredient i = new Ingredient();
+                    i.IngredientID = rd.GetInt32(0);
+                    i.IngredientName = rd.GetString(1);
+                    i.IngredientQuantity = rd.IsDBNull(2) ? "" : rd.GetString(2);
+                    i.RecipeID = rd.GetInt32(3);
+                    list.Add(i);
                 }
             }
+            return list;
+        }
 
-            public static List<Ingredient> GetByRecipe(int recipeId)
+        public static void DeleteByRecipe(int recipeId)
+        {
+            using (DbContext db = new DbContext())
             {
-                List<Ingredient> list = new List<Ingredient>();
-
-                using (SQLiteConnection conn = Db.GetConnection())
-                {
-                    conn.Open();
-
-                    using (SQLiteCommand cmd =
-                        new SQLiteCommand("SELECT * FROM Ingredients WHERE RecipeID=@id", conn))
-                    {
-                        cmd.Parameters.AddWithValue("@id", recipeId);
-
-                        using (SQLiteDataReader rd = cmd.ExecuteReader())
-                        {
-                            while (rd.Read())
-                            {
-                                Ingredient i = new Ingredient();
-                                i.IngredientID = rd.GetInt32(0);
-                                i.IngredientName = rd.GetString(1);
-                                i.IngredientQuantity = rd.GetString(2);
-                                i.RecipeID = rd.GetInt32(3);
-                                list.Add(i);
-                            }
-                        }
-                    }
-                }
-                return list;
+                string sql = "DELETE FROM Ingredients WHERE RecipeID=@id";
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@id", recipeId);
+                cmd.ExecuteNonQuery();
             }
         }
     }

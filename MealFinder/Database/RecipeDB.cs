@@ -5,25 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 namespace MealFinder.Database
 {
-    public class RecipeDB
+    public class RecipeContext
     {
-        public static void Add(string name, string desc)
+        public static void Insert(Recipe r)
         {
-            using (SQLiteConnection conn = Db.GetConnection())
+            using (DbContext db = new DbContext())
             {
-                conn.Open();
+                string sql = @"INSERT INTO Recipes 
+                               (RecipeName, Description)
+                               VALUES (@n,@d)";
 
-                string sql = "INSERT INTO Recipes (RecipeName, Description) VALUES (@n,@d)";
-
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@n", name);
-                    cmd.Parameters.AddWithValue("@d", desc);
-                    cmd.ExecuteNonQuery();
-                }
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@n", r.RecipeName);
+                cmd.Parameters.AddWithValue("@d", r.Description);
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -31,21 +30,19 @@ namespace MealFinder.Database
         {
             List<Recipe> list = new List<Recipe>();
 
-            using (SQLiteConnection conn = Db.GetConnection())
+            using (DbContext db = new DbContext())
             {
-                conn.Open();
+                SQLiteCommand cmd =
+                    new SQLiteCommand("SELECT * FROM Recipes", db.Conn);
 
-                using (SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Recipes", conn))
-                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                SQLiteDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
                 {
-                    while (rd.Read())
-                    {
-                        Recipe r = new Recipe();
-                        r.RecipeID = rd.GetInt32(0);
-                        r.RecipeName = rd.GetString(1);
-                        r.Description = rd.GetString(2);
-                        list.Add(r);
-                    }
+                    Recipe r = new Recipe();
+                    r.RecipeID = rd.GetInt32(0);
+                    r.RecipeName = rd.GetString(1);
+                    r.Description = rd.GetString(2);
+                    list.Add(r);
                 }
             }
             return list;

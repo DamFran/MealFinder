@@ -5,28 +5,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 namespace MealFinder.Database
 {
-        public class ProductDB
+    public class ProductContext
+    {
+        public static void Insert(Product p)
         {
-        public static void Add(string name, int stock, double price)
-        {
-            using (SQLiteConnection conn = Db.GetConnection())
+            using (DbContext db = new DbContext())
             {
-                conn.Open();
-
                 string sql = @"INSERT INTO Products 
-                       (ProductName, ProductStock, ProductPrice)
-                       VALUES (@n,@s,@p)";
+                               (ProductName, ProductStock, ProductPrice)
+                               VALUES (@n,@s,@p)";
 
-                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@n", name);
-                    cmd.Parameters.AddWithValue("@s", stock);
-                    cmd.Parameters.AddWithValue("@p", price);
-                    cmd.ExecuteNonQuery();
-                }
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@n", p.ProductName);
+                cmd.Parameters.AddWithValue("@s", p.ProductStock);
+                cmd.Parameters.AddWithValue("@p", p.ProductPrice);
+                cmd.ExecuteNonQuery();
             }
         }
 
@@ -34,26 +31,23 @@ namespace MealFinder.Database
         {
             List<Product> list = new List<Product>();
 
-            using (SQLiteConnection conn = Db.GetConnection())
+            using (DbContext db = new DbContext())
             {
-                conn.Open();
+                string sql = "SELECT * FROM Products";
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                SQLiteDataReader rd = cmd.ExecuteReader();
 
-                using (SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Products", conn))
-                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                while (rd.Read())
                 {
-                    while (rd.Read())
-                    {
-                        Product p = new Product();
-                        p.ProductID = rd.GetInt32(0);
-                        p.ProductName = rd.GetString(1);
-                        p.ProductStock = rd.IsDBNull(2) ? 0 : rd.GetInt32(2);
-                        p.ProductPrice = rd.IsDBNull(3) ? 0 : rd.GetDouble(3);
-                        list.Add(p);
-                    }
+                    Product p = new Product();
+                    p.ProductID = rd.GetInt32(0);
+                    p.ProductName = rd.GetString(1);
+                    p.ProductStock = rd.GetInt32(2);
+                    p.ProductPrice = rd.GetDouble(3);
+                    list.Add(p);
                 }
             }
             return list;
         }
-
     }
 }

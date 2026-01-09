@@ -18,8 +18,6 @@ namespace MealFinder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Db.Initialize(); // PENTING
-
             Application.Run(new LoginForm());
         }
     }
