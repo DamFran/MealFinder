@@ -1,4 +1,5 @@
-﻿using MealFinder.View;
+﻿using MealFinder.Database;
+using MealFinder.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,13 @@ namespace MealFinder
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Db.Initialize(); // PENTING
+
             Application.Run(new LoginForm());
         }
     }

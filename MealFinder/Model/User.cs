@@ -4,23 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MealFinder.Models
-{
-    public class User
+    namespace MealFinder.Model
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-
-        // Validasi sederhana (opsional tapi bagus)
-        public bool IsValid()
+        public class User
         {
-            return !string.IsNullOrWhiteSpace(Name)
-                && !string.IsNullOrWhiteSpace(Username)
-                && !string.IsNullOrWhiteSpace(Email)
-                && !string.IsNullOrWhiteSpace(Password);
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
         }
     }
-}
+

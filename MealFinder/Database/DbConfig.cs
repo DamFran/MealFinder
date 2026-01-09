@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace MealFinder.Database
 {
-    public static class DbConfig
+    namespace MealFinder.Database
     {
-        // GANTI sesuai database kamu
-        public static string ConnectionString =
-            "Data Source=localhost;" +
-            "Initial Catalog=MealFinderDB;" +
-            "Integrated Security=True";
-
-        internal static SqlConnection GetConnection()
+        public class DbConfig
         {
-            throw new NotImplementedException();
+            // Path absolut ke folder database
+            public static string DbFile = @"D:\FinalProject\MealFinder\Database\MealFinder.db";
+
+            public static string ConnectionString =
+                $"Data Source={DbFile};Version=3;";
         }
     }
 }
