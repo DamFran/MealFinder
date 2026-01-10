@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.RegistUsernameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.RegistEmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.RegistConfPassTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.RegistNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.RegistBtn = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.RegistPasswordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,17 +67,17 @@
             this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 20;
-            this.guna2CustomGradientPanel2.Controls.Add(this.RegistUsernameTextBox);
-            this.guna2CustomGradientPanel2.Controls.Add(this.RegistEmailTextBox);
-            this.guna2CustomGradientPanel2.Controls.Add(this.RegistConfPassTextBox);
+            this.guna2CustomGradientPanel2.Controls.Add(this.txtUsername);
+            this.guna2CustomGradientPanel2.Controls.Add(this.txtEmail);
+            this.guna2CustomGradientPanel2.Controls.Add(this.txtConfirm);
             this.guna2CustomGradientPanel2.Controls.Add(this.label2);
             this.guna2CustomGradientPanel2.Controls.Add(this.label1);
             this.guna2CustomGradientPanel2.Controls.Add(this.pictureBox1);
             this.guna2CustomGradientPanel2.Controls.Add(this.iconPictureBox2);
             this.guna2CustomGradientPanel2.Controls.Add(this.iconPictureBox1);
-            this.guna2CustomGradientPanel2.Controls.Add(this.RegistNameTextBox);
+            this.guna2CustomGradientPanel2.Controls.Add(this.txtName);
             this.guna2CustomGradientPanel2.Controls.Add(this.RegistBtn);
-            this.guna2CustomGradientPanel2.Controls.Add(this.RegistPasswordTextBox);
+            this.guna2CustomGradientPanel2.Controls.Add(this.txtPassword);
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(241)))));
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.Gainsboro;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(363, 12);
@@ -85,80 +85,80 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(482, 652);
             this.guna2CustomGradientPanel2.TabIndex = 4;
             // 
-            // RegistUsernameTextBox
+            // txtUsername
             // 
-            this.RegistUsernameTextBox.AutoRoundedCorners = true;
-            this.RegistUsernameTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.RegistUsernameTextBox.BorderColor = System.Drawing.Color.Gainsboro;
-            this.RegistUsernameTextBox.BorderRadius = 21;
-            this.RegistUsernameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegistUsernameTextBox.DefaultText = "";
-            this.RegistUsernameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegistUsernameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegistUsernameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistUsernameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistUsernameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistUsernameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegistUsernameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.RegistUsernameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistUsernameTextBox.Location = new System.Drawing.Point(75, 256);
-            this.RegistUsernameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegistUsernameTextBox.Name = "RegistUsernameTextBox";
-            this.RegistUsernameTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.RegistUsernameTextBox.PlaceholderText = "Username";
-            this.RegistUsernameTextBox.SelectedText = "";
-            this.RegistUsernameTextBox.Size = new System.Drawing.Size(334, 44);
-            this.RegistUsernameTextBox.TabIndex = 10;
+            this.txtUsername.AutoRoundedCorners = true;
+            this.txtUsername.BackColor = System.Drawing.Color.Transparent;
+            this.txtUsername.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtUsername.BorderRadius = 21;
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.DefaultText = "";
+            this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername.Location = new System.Drawing.Point(75, 256);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtUsername.PlaceholderText = "Username";
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.Size = new System.Drawing.Size(334, 44);
+            this.txtUsername.TabIndex = 10;
             // 
-            // RegistEmailTextBox
+            // txtEmail
             // 
-            this.RegistEmailTextBox.AutoRoundedCorners = true;
-            this.RegistEmailTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.RegistEmailTextBox.BorderColor = System.Drawing.Color.Gainsboro;
-            this.RegistEmailTextBox.BorderRadius = 21;
-            this.RegistEmailTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegistEmailTextBox.DefaultText = "";
-            this.RegistEmailTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegistEmailTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegistEmailTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistEmailTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistEmailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistEmailTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegistEmailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.RegistEmailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistEmailTextBox.Location = new System.Drawing.Point(75, 318);
-            this.RegistEmailTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegistEmailTextBox.Name = "RegistEmailTextBox";
-            this.RegistEmailTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.RegistEmailTextBox.PlaceholderText = "Email";
-            this.RegistEmailTextBox.SelectedText = "";
-            this.RegistEmailTextBox.Size = new System.Drawing.Size(334, 44);
-            this.RegistEmailTextBox.TabIndex = 9;
+            this.txtEmail.AutoRoundedCorners = true;
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderRadius = 21;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(75, 318);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(334, 44);
+            this.txtEmail.TabIndex = 9;
             // 
-            // RegistConfPassTextBox
+            // txtConfirm
             // 
-            this.RegistConfPassTextBox.AutoRoundedCorners = true;
-            this.RegistConfPassTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.RegistConfPassTextBox.BorderColor = System.Drawing.Color.Gainsboro;
-            this.RegistConfPassTextBox.BorderRadius = 19;
-            this.RegistConfPassTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegistConfPassTextBox.DefaultText = "";
-            this.RegistConfPassTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegistConfPassTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegistConfPassTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistConfPassTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistConfPassTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistConfPassTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegistConfPassTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.RegistConfPassTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistConfPassTextBox.Location = new System.Drawing.Point(74, 440);
-            this.RegistConfPassTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegistConfPassTextBox.Name = "RegistConfPassTextBox";
-            this.RegistConfPassTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.RegistConfPassTextBox.PlaceholderText = " Password Confirmation";
-            this.RegistConfPassTextBox.SelectedText = "";
-            this.RegistConfPassTextBox.Size = new System.Drawing.Size(334, 41);
-            this.RegistConfPassTextBox.TabIndex = 8;
+            this.txtConfirm.AutoRoundedCorners = true;
+            this.txtConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.txtConfirm.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtConfirm.BorderRadius = 19;
+            this.txtConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConfirm.DefaultText = "";
+            this.txtConfirm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtConfirm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.txtConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtConfirm.Location = new System.Drawing.Point(74, 440);
+            this.txtConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtConfirm.PlaceholderText = " Password Confirmation";
+            this.txtConfirm.SelectedText = "";
+            this.txtConfirm.Size = new System.Drawing.Size(334, 41);
+            this.txtConfirm.TabIndex = 8;
             // 
             // label2
             // 
@@ -166,7 +166,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(263, 583);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(66, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Login here";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -177,7 +177,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(109, 583);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 20);
+            this.label1.Size = new System.Drawing.Size(124, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "already have account?";
             // 
@@ -219,30 +219,30 @@
             this.iconPictureBox1.TabIndex = 3;
             this.iconPictureBox1.TabStop = false;
             // 
-            // RegistNameTextBox
+            // txtName
             // 
-            this.RegistNameTextBox.AutoRoundedCorners = true;
-            this.RegistNameTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.RegistNameTextBox.BorderColor = System.Drawing.Color.Gainsboro;
-            this.RegistNameTextBox.BorderRadius = 21;
-            this.RegistNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegistNameTextBox.DefaultText = "";
-            this.RegistNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegistNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegistNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegistNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.RegistNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistNameTextBox.Location = new System.Drawing.Point(74, 193);
-            this.RegistNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegistNameTextBox.Name = "RegistNameTextBox";
-            this.RegistNameTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.RegistNameTextBox.PlaceholderText = "Name ";
-            this.RegistNameTextBox.SelectedText = "";
-            this.RegistNameTextBox.Size = new System.Drawing.Size(334, 44);
-            this.RegistNameTextBox.TabIndex = 0;
+            this.txtName.AutoRoundedCorners = true;
+            this.txtName.BackColor = System.Drawing.Color.Transparent;
+            this.txtName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtName.BorderRadius = 21;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.DefaultText = "";
+            this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtName.Location = new System.Drawing.Point(74, 193);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtName.PlaceholderText = "Name ";
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(334, 44);
+            this.txtName.TabIndex = 0;
             // 
             // RegistBtn
             // 
@@ -264,35 +264,36 @@
             this.RegistBtn.TabIndex = 2;
             this.RegistBtn.Text = "Register";
             this.RegistBtn.UseTransparentBackground = true;
+            this.RegistBtn.Click += new System.EventHandler(this.RegistBtn_Click);
             // 
-            // RegistPasswordTextBox
+            // txtPassword
             // 
-            this.RegistPasswordTextBox.AutoRoundedCorners = true;
-            this.RegistPasswordTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.RegistPasswordTextBox.BorderColor = System.Drawing.Color.Gainsboro;
-            this.RegistPasswordTextBox.BorderRadius = 19;
-            this.RegistPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RegistPasswordTextBox.DefaultText = "";
-            this.RegistPasswordTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RegistPasswordTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RegistPasswordTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistPasswordTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RegistPasswordTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RegistPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.RegistPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RegistPasswordTextBox.Location = new System.Drawing.Point(74, 382);
-            this.RegistPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RegistPasswordTextBox.Name = "RegistPasswordTextBox";
-            this.RegistPasswordTextBox.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.RegistPasswordTextBox.PlaceholderText = "Password";
-            this.RegistPasswordTextBox.SelectedText = "";
-            this.RegistPasswordTextBox.Size = new System.Drawing.Size(334, 41);
-            this.RegistPasswordTextBox.TabIndex = 1;
+            this.txtPassword.AutoRoundedCorners = true;
+            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtPassword.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtPassword.BorderRadius = 19;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.DefaultText = "";
+            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword.Location = new System.Drawing.Point(74, 382);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtPassword.PlaceholderText = "Password";
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.Size = new System.Drawing.Size(334, 41);
+            this.txtPassword.TabIndex = 1;
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.guna2CustomGradientPanel1);
@@ -320,11 +321,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private Guna.UI2.WinForms.Guna2TextBox RegistNameTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Guna.UI2.WinForms.Guna2GradientButton RegistBtn;
-        private Guna.UI2.WinForms.Guna2TextBox RegistPasswordTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox RegistConfPassTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox RegistUsernameTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox RegistEmailTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtConfirm;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsername;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
     }
 }

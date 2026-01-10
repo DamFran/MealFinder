@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 using MealFinder.Model;
 using System.Data;
 using System.Data.SQLite;
@@ -26,7 +26,11 @@ namespace MealFinder.Database
 
             try
             {
-                string dbPath = @"F:\FinalProject\MealFinder\Database";
+                string projectDir = Path.GetFullPath(
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..")
+                );
+
+                string dbPath = Path.Combine(projectDir, "Database");
                 string dbName = Path.Combine(dbPath, "MealFinder.db");
 
                 if (!Directory.Exists(dbPath))
@@ -34,9 +38,7 @@ namespace MealFinder.Database
                     Directory.CreateDirectory(dbPath);
                 }
 
-                string connectionString = string.Format(
-                    "Data Source={0};Version=3;", dbName
-                );
+                string connectionString = $"Data Source={dbName};Version=3;";
 
                 conn = new SQLiteConnection(connectionString);
                 conn.Open();
@@ -45,13 +47,12 @@ namespace MealFinder.Database
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print(
-                    "Open Connection Error: {0}", ex.Message
-                );
+                MessageBox.Show(ex.Message, "DB Error");
             }
 
             return conn;
         }
+
 
         // ================= CREATE TABLE =================
         private void CreateTables(SQLiteConnection conn)
@@ -62,9 +63,20 @@ namespace MealFinder.Database
                 cmd.CommandText = @"
                 CREATE TABLE IF NOT EXISTS Users (
                     UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Name TEXT NOT NULL,
                     Username TEXT NOT NULL,
                     Email TEXT UNIQUE NOT NULL,
-                    Password TEXT NOT NULL
+                    Password TEXT NOT NULL,
+                    Role TEXT NOT NULL
+                );";
+                cmd.ExecuteNonQuery();
+
+                // ================= DEFAULT ADMIN =================
+                cmd.CommandText = @"
+                INSERT INTO Users (Name, Username, Email, Password, Role)
+                SELECT 'Administrator', 'admin', 'admin@admin.com', 'admin123', 'admin'
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM Users WHERE Role = 'admin'
                 );";
                 cmd.ExecuteNonQuery();
 

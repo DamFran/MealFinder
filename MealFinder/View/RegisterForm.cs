@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MealFinder.View;
+using MealFinder.Controller;
 
 namespace MealFinder.View
 {
     public partial class RegisterForm : Form
     {
+        public string RegisteredUsername { get; private set; }
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -26,10 +29,32 @@ namespace MealFinder.View
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login loginForm = new Login();
-            loginForm.Show();
-            
+            this.Close();
+        }
+
+        private void RegistBtn_Click(object sender, EventArgs e)
+        {
+            string result = AuthController.Register(
+                txtName.Text.Trim(),
+                txtUsername.Text.Trim(),
+                txtEmail.Text.Trim(),
+                txtPassword.Text.Trim(),
+                txtConfirm.Text.Trim()
+);
+
+            if (result == "OK")
+            {
+                MessageBox.Show("Register berhasil!");
+
+                RegisteredUsername = txtUsername.Text.Trim(); // ⬅️ SIMPAN USERNAME
+                this.DialogResult = DialogResult.OK;           // ⬅️ KIRIM STATUS KE LOGIN
+                this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
     }
 }

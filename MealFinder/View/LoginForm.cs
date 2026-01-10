@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MealFinder.Controller;
+using MealFinder.Model;
+using MealFinder.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MealFinder.View;
 
 namespace MealFinder.View
 {
@@ -43,8 +45,31 @@ namespace MealFinder.View
         private void label2_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
-            this.Hide(); // atau this.Close();
+
+            if (registerForm.ShowDialog() == DialogResult.OK)
+            {
+                txtUsername.Text = registerForm.RegisteredUsername;
+                txtPassword.Focus();
+            }
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            User user = AuthController.Login(
+                txtUsername.Text.Trim(),
+                txtPassword.Text.Trim()
+            );
+
+            if (user != null)
+            {
+                PanelForm panel = new PanelForm(user);
+                panel.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal!");
+            }
         }
     }
 }

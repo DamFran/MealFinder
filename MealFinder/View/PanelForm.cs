@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using MealFinder.Model;
 
 namespace MealFinder.View
 {
     public partial class PanelForm : Form
     {
+
+        private User _currentUser; 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
@@ -30,6 +33,21 @@ namespace MealFinder.View
             SetButtonHoverStyle(BtnRecipe);
             SetButtonHoverStyle(BtnAboutUs);
         }
+
+        public PanelForm(User user) : this()
+        {
+            _currentUser = user;
+
+            // Contoh: tampilkan username / role
+            lblUsername.Text = user.Username;
+
+            // Contoh: role admin
+            if (user.Role != "admin")
+            {
+                BtnRecipe.Visible = false; // contoh menu admin
+            }
+        }
+
         private void SetButtonHoverStyle(IconButton button)
         {
             button.FlatStyle = FlatStyle.Flat;
