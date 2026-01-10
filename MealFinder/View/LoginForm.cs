@@ -55,21 +55,35 @@ namespace MealFinder.View
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            User user = AuthController.Login(
+            string result = AuthController.Login(
                 txtUsername.Text.Trim(),
-                txtPassword.Text.Trim()
+                txtPassword.Text.Trim(),
+                out User user
             );
 
-            if (user != null)
+            if (result == "OK")
             {
+                MessageBox.Show(
+                    "Login berhasil!",
+                    "Sukses",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
                 PanelForm panel = new PanelForm(user);
                 panel.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Login gagal!");
+                MessageBox.Show(
+                    result,
+                    "Login gagal",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.None
+                );
             }
         }
+
     }
 }

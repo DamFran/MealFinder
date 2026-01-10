@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 using MealFinder.Database;
 using MealFinder.Model;
 
+using System.Text.RegularExpressions;
+
+
 namespace MealFinder.Controller
 {
     public class AuthController
     {
+        // ================= REGISTER =================
         public static string Register(
             string name,
             string username,
@@ -17,36 +21,98 @@ namespace MealFinder.Controller
             string password,
             string confirm)
         {
-            if (password != confirm)
-                return "Password tidak sama";
-
+            // 1. Field kosong
             if (string.IsNullOrWhiteSpace(name) ||
                 string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(password))
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirm))
                 return "Semua field wajib diisi";
+
+            // 2. Name
+            if (name.Length < 3)
+                return "Name minimal 3 karakter";
+
+            // 3. Username
+            if (username.Length < 4)
+                return "Username minimal 4 karakter";
+
+            if (username.Contains(" "))
+                return "Username tidak boleh mengandung spasi";
+
+            // 4. Email
+            if (!IsValidEmail(email))
+                return "Email harus valid dan mengandung '@'";
+
+            // 5. Password
+            if (!IsStrongPassword(password))
+                return "Password minimal 8 karakter,\n"
+                     + "mengandung huruf besar, huruf kecil, dan angka";
+
+            // 6. Konfirmasi password
+            if (password != confirm)
+                return "Password dan konfirmasi password tidak sama";
 
             User user = new User
             {
-                Name = name,
-                Username = username,
-                Email = email,
+                Name = name.Trim(),
+                Username = username.Trim(),
+                Email = email.Trim(),
                 Password = password
             };
 
             bool success = UserContext.Register(user);
 
-            return success ? "OK" : "Username atau Email sudah terdaftar";
+            return success
+                ? "OK"
+                : "Username atau Email sudah terdaftar";
         }
 
-
-        public static User Login(string username, string password)
+        // ================= LOGIN =================
+        public static string Login(
+            string username,
+            string password,
+            out User user)
         {
+            user = null;
+
             if (string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(password))
-                return null;
+                return "Username dan Password wajib diisi";
 
-            return UserContext.Login(username, password);
+            user = UserContext.Login(username, password);
+
+            if (user == null)
+                return "Username atau Password salah";
+
+            return "OK";
+        }
+
+        // ================= VALIDATION HELPER =================
+        private static bool IsValidEmail(string email)
+        {
+            return Regex.IsMatch(
+                email,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$"
+            );
+        }
+
+        private static bool IsStrongPassword(string password)
+        {
+            if (password.Length < 8) return false;
+
+            bool hasUpper = false;
+            bool hasLower = false;
+            bool hasDigit = false;
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c)) hasUpper = true;
+                else if (char.IsLower(c)) hasLower = true;
+                else if (char.IsDigit(c)) hasDigit = true;
+            }
+
+            return hasUpper && hasLower && hasDigit;
         }
     }
 }
