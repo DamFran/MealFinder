@@ -26,9 +26,10 @@ namespace MealFinder.View
 
         private void label2_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
             this.Hide();
+            Login loginForm = new Login();
+            loginForm.Show();
+            
         }
     }
 }
