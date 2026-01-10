@@ -25,6 +25,23 @@ namespace MealFinder.View
             this.MinimizeBox = false;        // (opsional) Nonaktifkan minimize
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            // Default hidden
+            txtPassword.UseSystemPasswordChar = true;
+            txtConfirm.UseSystemPasswordChar = true;
+
+            // Icon awal
+            btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            btnToggleConfirm.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+
+            btnTogglePassword.IconColor = Color.Gray;
+            btnToggleConfirm.IconColor = Color.Gray;
+
+            btnTogglePassword.FlatStyle = FlatStyle.Flat;
+            btnToggleConfirm.FlatStyle = FlatStyle.Flat;
+
+            btnTogglePassword.FlatAppearance.BorderSize = 0;
+            btnToggleConfirm.FlatAppearance.BorderSize = 0;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -55,6 +72,26 @@ namespace MealFinder.View
             {
                 MessageBox.Show(result);
             }
+        }
+
+        private void btnTogglePassword_Click(object sender, EventArgs e)
+        {
+            bool hidden = txtPassword.UseSystemPasswordChar;
+
+            txtPassword.UseSystemPasswordChar = !hidden;
+            btnTogglePassword.IconChar = hidden
+                ? FontAwesome.Sharp.IconChar.Eye
+                : FontAwesome.Sharp.IconChar.EyeSlash;
+        }
+
+        private void btnToggleConfirm_Click(object sender, EventArgs e)
+        {
+            bool hidden = txtConfirm.UseSystemPasswordChar;
+
+            txtConfirm.UseSystemPasswordChar = !hidden;
+            btnToggleConfirm.IconChar = hidden
+                ? FontAwesome.Sharp.IconChar.Eye
+                : FontAwesome.Sharp.IconChar.EyeSlash;
         }
     }
 }

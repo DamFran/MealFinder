@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.PanelLogin = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnTogglePassword = new FontAwesome.Sharp.IconButton();
             this.Register = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -64,6 +65,7 @@
             this.guna2CustomGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 20;
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnTogglePassword);
             this.guna2CustomGradientPanel1.Controls.Add(this.Register);
             this.guna2CustomGradientPanel1.Controls.Add(this.label1);
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
@@ -78,6 +80,19 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(482, 516);
             this.guna2CustomGradientPanel1.TabIndex = 3;
+            // 
+            // btnTogglePassword
+            // 
+            this.btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnTogglePassword.IconColor = System.Drawing.Color.Black;
+            this.btnTogglePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTogglePassword.Location = new System.Drawing.Point(415, 273);
+            this.btnTogglePassword.Name = "btnTogglePassword";
+            this.btnTogglePassword.Size = new System.Drawing.Size(53, 39);
+            this.btnTogglePassword.TabIndex = 8;
+            this.btnTogglePassword.Text = "iconButton1";
+            this.btnTogglePassword.UseVisualStyleBackColor = true;
+            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
             // 
             // Register
             // 
@@ -247,5 +262,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label Register;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnTogglePassword;
     }
 }

@@ -42,6 +42,8 @@
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.RegistBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnTogglePassword = new FontAwesome.Sharp.IconButton();
+            this.btnToggleConfirm = new FontAwesome.Sharp.IconButton();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +69,8 @@
             this.guna2CustomGradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 20;
+            this.guna2CustomGradientPanel2.Controls.Add(this.btnToggleConfirm);
+            this.guna2CustomGradientPanel2.Controls.Add(this.btnTogglePassword);
             this.guna2CustomGradientPanel2.Controls.Add(this.txtUsername);
             this.guna2CustomGradientPanel2.Controls.Add(this.txtEmail);
             this.guna2CustomGradientPanel2.Controls.Add(this.txtConfirm);
@@ -291,6 +295,32 @@
             this.txtPassword.Size = new System.Drawing.Size(334, 41);
             this.txtPassword.TabIndex = 1;
             // 
+            // btnTogglePassword
+            // 
+            this.btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnTogglePassword.IconColor = System.Drawing.Color.Black;
+            this.btnTogglePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTogglePassword.Location = new System.Drawing.Point(424, 382);
+            this.btnTogglePassword.Name = "btnTogglePassword";
+            this.btnTogglePassword.Size = new System.Drawing.Size(43, 41);
+            this.btnTogglePassword.TabIndex = 11;
+            this.btnTogglePassword.Text = "iconButton1";
+            this.btnTogglePassword.UseVisualStyleBackColor = true;
+            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
+            // 
+            // btnToggleConfirm
+            // 
+            this.btnToggleConfirm.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnToggleConfirm.IconColor = System.Drawing.Color.Black;
+            this.btnToggleConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnToggleConfirm.Location = new System.Drawing.Point(424, 445);
+            this.btnToggleConfirm.Name = "btnToggleConfirm";
+            this.btnToggleConfirm.Size = new System.Drawing.Size(43, 36);
+            this.btnToggleConfirm.TabIndex = 12;
+            this.btnToggleConfirm.Text = "iconButton2";
+            this.btnToggleConfirm.UseVisualStyleBackColor = true;
+            this.btnToggleConfirm.Click += new System.EventHandler(this.btnToggleConfirm_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -327,5 +357,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtConfirm;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private FontAwesome.Sharp.IconButton btnToggleConfirm;
+        private FontAwesome.Sharp.IconButton btnTogglePassword;
     }
 }

@@ -17,6 +17,7 @@ namespace MealFinder.View
     {
         public Login()
         {
+            
 
             InitializeComponent();
 
@@ -25,6 +26,15 @@ namespace MealFinder.View
             this.MinimizeBox = false;        // (opsional) Nonaktifkan minimize
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            txtPassword.UseSystemPasswordChar = true;
+
+            // Icon default = eye slash
+            btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            btnTogglePassword.IconColor = Color.Gray;
+            btnTogglePassword.FlatStyle = FlatStyle.Flat;
+            btnTogglePassword.FlatAppearance.BorderSize = 0;
+            btnTogglePassword.Cursor = Cursors.Hand;
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -85,5 +95,15 @@ namespace MealFinder.View
             }
         }
 
+        private void btnTogglePassword_Click(object sender, EventArgs e)
+        {
+            bool hidden = txtPassword.UseSystemPasswordChar;
+
+            txtPassword.UseSystemPasswordChar = !hidden;
+
+            btnTogglePassword.IconChar = hidden
+                ? FontAwesome.Sharp.IconChar.Eye
+                : FontAwesome.Sharp.IconChar.EyeSlash;
+        }
     }
 }
