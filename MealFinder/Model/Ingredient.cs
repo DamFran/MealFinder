@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace MealFinder.Models
 {
-    public class Ingredient
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Stock { get; set; }
-
-        public bool IsValid()
+        public class Ingredient
         {
-            return !string.IsNullOrWhiteSpace(Name) && Stock >= 0;
+            public int IngredientID { get; set; }
+            public string IngredientName { get; set; }
+            public string IngredientQuantity { get; set; }
+            public int RecipeID { get; set; }
         }
     }
-}
+

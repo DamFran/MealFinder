@@ -8,9 +8,10 @@ namespace MealFinder.Model
 {
     public class Product
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public int Stock { get; set; }
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public int ProductStock { get; set; }
+        public double ProductPrice { get; set; }
     }
 }
+
