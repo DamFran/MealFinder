@@ -125,12 +125,14 @@ namespace MealFinder.View
         {
             ActivateButton(sender, RGBColors.white);
             
+
         }
 
         private void BtnAboutUs_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.white);
-            
+            OpenChildControl(new Team());
+
         }
 
       

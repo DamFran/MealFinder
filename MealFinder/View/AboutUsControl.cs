@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace MealFinder.View
 {
-    public partial class AboutUsControl : UserControl
+    public partial class Team : UserControl
     {
-        public AboutUsControl()
+        public Team()
         {
             InitializeComponent();
         }
+
+       
     }
 }
