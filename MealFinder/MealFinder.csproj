@@ -192,6 +192,33 @@
   <ItemGroup>
     <None Include="Resources\MealFinderFix.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\ayamgeprek.jpg" />
+    <Content Include="Images\ayamgoreng.jpg" />
+    <Content Include="Images\ayamkecap.jpg" />
+    <Content Include="Images\ayamricarica.jpg" />
+    <Content Include="Images\bakwan.jpg" />
+    <Content Include="Images\caypcay.jpg" />
+    <Content Include="Images\ikanbakar.jpg" />
+    <Content Include="Images\ikangoreng.jpg" />
+    <Content Include="Images\miegoreng.jpg" />
+    <Content Include="Images\mierebus.jpg" />
+    <Content Include="Images\nasi.jpg" />
+    <Content Include="Images\nasigoreng.jpg" />
+    <Content Include="Images\nasikuning.jpg" />
+    <Content Include="Images\nasiuduk.jpg" />
+    <Content Include="Images\omeletkeju.jpg" />
+    <Content Include="Images\pancake.jpg" />
+    <Content Include="Images\sambalgoreng.jpg" />
+    <Content Include="Images\supayam.jpg" />
+    <Content Include="Images\supikan.jpg" />
+    <Content Include="Images\tahugoreng.jpg" />
+    <Content Include="Images\Telur Ceplok.jpg" />
+    <Content Include="Images\Telur dadar.jpg" />
+    <Content Include="Images\telurorakarik.jpg" />
+    <Content Include="Images\tempegoreng.jpg" />
+    <Content Include="Images\tumissayur.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

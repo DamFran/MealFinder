@@ -11,41 +11,71 @@ namespace MealFinder.Database
 {
     public class RecipeContext
     {
-        public static void Insert(Recipe r)
+        public void Insert(Recipe recipe)
         {
             using (DbContext db = new DbContext())
+            using (SQLiteCommand cmd = new SQLiteCommand(
+                @"INSERT INTO Recipe 
+          (RecipeName, Description, ImagePath)
+          VALUES (@name, @desc, @img)", db.Conn))
             {
-                string sql = @"INSERT INTO Recipes 
-                               (RecipeName, Description)
-                               VALUES (@n,@d)";
-
-                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
-                cmd.Parameters.AddWithValue("@n", r.RecipeName);
-                cmd.Parameters.AddWithValue("@d", r.Description);
+                cmd.Parameters.AddWithValue("@name", recipe.RecipeName);
+                cmd.Parameters.AddWithValue("@desc", recipe.Description);
+                cmd.Parameters.AddWithValue("@img", recipe.ImagePath);
                 cmd.ExecuteNonQuery();
             }
         }
 
-        public static List<Recipe> GetAll()
+
+        public List<Recipe> GetAll()
         {
             List<Recipe> list = new List<Recipe>();
 
             using (DbContext db = new DbContext())
+            using (SQLiteCommand cmd = new SQLiteCommand(
+                "SELECT * FROM Recipe", db.Conn))
+            using (SQLiteDataReader rd = cmd.ExecuteReader())
             {
-                SQLiteCommand cmd =
-                    new SQLiteCommand("SELECT * FROM Recipes", db.Conn);
-
-                SQLiteDataReader rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
                     Recipe r = new Recipe();
-                    r.RecipeID = rd.GetInt32(0);
-                    r.RecipeName = rd.GetString(1);
-                    r.Description = rd.GetString(2);
+                    r.RecipeID = Convert.ToInt32(rd["RecipeID"]);
+                    r.RecipeName = rd["RecipeName"].ToString();
+                    r.Description = rd["Description"].ToString();
+                    r.ImagePath = rd["ImagePath"].ToString();
+
                     list.Add(r);
                 }
             }
+
             return list;
+        }
+
+        public Recipe GetById(int id)
+        {
+            Recipe recipe = null;
+
+            using (DbContext db = new DbContext())
+            using (SQLiteCommand cmd = new SQLiteCommand(
+                "SELECT * FROM Recipe WHERE RecipeID = @id",
+                db.Conn))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+
+                using (SQLiteDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        recipe = new Recipe();
+                        recipe.RecipeID = Convert.ToInt32(rd["RecipeID"]);
+                        recipe.RecipeName = rd["RecipeName"].ToString();
+                        recipe.Description = rd["Description"].ToString();
+                        recipe.ImagePath = rd["ImagePath"].ToString();
+                    }
+                }
+            }
+
+            return recipe;
         }
     }
 }
