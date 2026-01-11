@@ -119,8 +119,6 @@ namespace MealFinder.View
             OpenChildControl(new RecipeControl());
 =======
             
-
->>>>>>> 2f3a98c2305290900c3765aec7460b8a0f0f02e4
         }
 
         private void BtnAboutUs_Click(object sender, EventArgs e)
