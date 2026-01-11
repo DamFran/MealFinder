@@ -115,13 +115,19 @@ namespace MealFinder.View
         private void BtnRecipe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.white);
+<<<<<<< HEAD
             OpenChildControl(new RecipeControl());
+=======
+            
+
+>>>>>>> 2f3a98c2305290900c3765aec7460b8a0f0f02e4
         }
 
         private void BtnAboutUs_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.white);
-            
+            OpenChildControl(new Team());
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

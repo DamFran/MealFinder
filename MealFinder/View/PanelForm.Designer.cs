@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelForm));
             this.panelMenu = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.LogoPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblTitleChildForm = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.BtnAboutUs = new FontAwesome.Sharp.IconButton();
             this.BtnRecipe = new FontAwesome.Sharp.IconButton();
             this.BtnHome = new FontAwesome.Sharp.IconButton();
+            this.LogoPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblTitleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.LogoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -63,99 +64,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 703);
             this.panelMenu.TabIndex = 0;
-            // 
-            // LogoPanel
-            // 
-            this.LogoPanel.BackColor = System.Drawing.Color.Transparent;
-            this.LogoPanel.Controls.Add(this.pictureBox1);
-            this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogoPanel.Location = new System.Drawing.Point(0, 0);
-            this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(250, 174);
-            this.LogoPanel.TabIndex = 1;
-            // 
-            // panelTop
-            // 
-            this.panelTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(53)))));
-            this.panelTop.Controls.Add(this.btnLogout);
-            this.panelTop.Controls.Add(this.lblUsername);
-            this.panelTop.Controls.Add(this.lblTitleChildForm);
-            this.panelTop.Controls.Add(this.iconCurrentChildForm);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(65)))));
-            this.panelTop.Location = new System.Drawing.Point(250, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(5);
-            this.panelTop.Size = new System.Drawing.Size(950, 100);
-            this.panelTop.TabIndex = 1;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUsername.Location = new System.Drawing.Point(731, 9);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(200, 20);
-            this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "label1";
-            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTitleChildForm
-            // 
-            this.lblTitleChildForm.AutoSize = true;
-            this.lblTitleChildForm.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(79, 43);
-            this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
-            this.lblTitleChildForm.TabIndex = 1;
-            this.lblTitleChildForm.Text = "Home";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(250, 100);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(950, 603);
-            this.panelDesktop.TabIndex = 2;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
-            this.btnLogout.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 20;
-            this.btnLogout.Location = new System.Drawing.Point(909, 35);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(22, 22);
-            this.btnLogout.TabIndex = 3;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // iconCurrentChildForm
-            // 
-            this.iconCurrentChildForm.BackColor = System.Drawing.Color.Transparent;
-            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconCurrentChildForm.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(33, 35);
-            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
-            this.iconCurrentChildForm.TabIndex = 0;
-            this.iconCurrentChildForm.TabStop = false;
             // 
             // BtnAboutUs
             // 
@@ -225,6 +133,16 @@
             this.BtnHome.UseVisualStyleBackColor = false;
             this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
+            // LogoPanel
+            // 
+            this.LogoPanel.BackColor = System.Drawing.Color.Transparent;
+            this.LogoPanel.Controls.Add(this.pictureBox1);
+            this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LogoPanel.Location = new System.Drawing.Point(0, 0);
+            this.LogoPanel.Name = "LogoPanel";
+            this.LogoPanel.Size = new System.Drawing.Size(250, 174);
+            this.LogoPanel.TabIndex = 1;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -236,6 +154,89 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panelTop
+            // 
+            this.panelTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(53)))));
+            this.panelTop.Controls.Add(this.btnLogout);
+            this.panelTop.Controls.Add(this.lblUsername);
+            this.panelTop.Controls.Add(this.lblTitleChildForm);
+            this.panelTop.Controls.Add(this.iconCurrentChildForm);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(65)))));
+            this.panelTop.Location = new System.Drawing.Point(250, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Padding = new System.Windows.Forms.Padding(5);
+            this.panelTop.Size = new System.Drawing.Size(950, 100);
+            this.panelTop.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
+            this.btnLogout.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 20;
+            this.btnLogout.Location = new System.Drawing.Point(909, 35);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(22, 22);
+            this.btnLogout.TabIndex = 3;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblUsername.Location = new System.Drawing.Point(675, 9);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(256, 20);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "label1";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(79, 43);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
+            this.lblTitleChildForm.TabIndex = 1;
+            this.lblTitleChildForm.Text = "Home";
+            // 
+            // iconCurrentChildForm
+            // 
+            this.iconCurrentChildForm.BackColor = System.Drawing.Color.Transparent;
+            this.iconCurrentChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconCurrentChildForm.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(33, 35);
+            this.iconCurrentChildForm.Name = "iconCurrentChildForm";
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.iconCurrentChildForm.TabIndex = 0;
+            this.iconCurrentChildForm.TabStop = false;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(250, 100);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(950, 603);
+            this.panelDesktop.TabIndex = 2;
+            // 
             // PanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -245,15 +246,16 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PanelForm";
             this.Text = "PanelForm";
             this.panelMenu.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
