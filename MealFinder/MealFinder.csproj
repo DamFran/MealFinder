@@ -126,6 +126,12 @@
     <Compile Include="View\PanelForm.Designer.cs">
       <DependentUpon>PanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RecipeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\RecipeControl.Designer.cs">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PanelForm.resx">
       <DependentUpon>PanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RecipeControl.resx">
+      <DependentUpon>RecipeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>

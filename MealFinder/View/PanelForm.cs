@@ -115,7 +115,7 @@ namespace MealFinder.View
         private void BtnRecipe_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.white);
-            
+            OpenChildControl(new RecipeControl());
         }
 
         private void BtnAboutUs_Click(object sender, EventArgs e)
