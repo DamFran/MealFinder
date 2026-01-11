@@ -158,7 +158,7 @@
             this.dgvRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecipes.Location = new System.Drawing.Point(3, 36);
             this.dgvRecipes.Name = "dgvRecipes";
-            this.dgvRecipes.Size = new System.Drawing.Size(294, 531);
+            this.dgvRecipes.Size = new System.Drawing.Size(294, 519);
             this.dgvRecipes.TabIndex = 1;
             // 
             // guna2HtmlLabel2
