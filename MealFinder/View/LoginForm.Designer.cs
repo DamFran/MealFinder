@@ -83,15 +83,17 @@
             // 
             // btnTogglePassword
             // 
+            this.btnTogglePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnTogglePassword.ForeColor = System.Drawing.Color.Transparent;
             this.btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnTogglePassword.IconColor = System.Drawing.Color.Black;
+            this.btnTogglePassword.IconColor = System.Drawing.Color.Gainsboro;
             this.btnTogglePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTogglePassword.Location = new System.Drawing.Point(415, 273);
+            this.btnTogglePassword.IconSize = 25;
+            this.btnTogglePassword.Location = new System.Drawing.Point(415, 275);
             this.btnTogglePassword.Name = "btnTogglePassword";
-            this.btnTogglePassword.Size = new System.Drawing.Size(53, 39);
+            this.btnTogglePassword.Size = new System.Drawing.Size(30, 30);
             this.btnTogglePassword.TabIndex = 8;
-            this.btnTogglePassword.Text = "iconButton1";
-            this.btnTogglePassword.UseVisualStyleBackColor = true;
+            this.btnTogglePassword.UseVisualStyleBackColor = false;
             this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
             // 
             // Register
@@ -100,7 +102,7 @@
             this.Register.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register.Location = new System.Drawing.Point(246, 454);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(85, 15);
+            this.Register.Size = new System.Drawing.Size(104, 20);
             this.Register.TabIndex = 7;
             this.Register.Text = "Register Here";
             this.Register.Click += new System.EventHandler(this.label2_Click);
@@ -111,7 +113,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(92, 454);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 15);
+            this.label1.Size = new System.Drawing.Size(160, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Dont have an account?";
             // 
@@ -230,7 +232,7 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1100, 647);

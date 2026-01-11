@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnToggleConfirm = new FontAwesome.Sharp.IconButton();
+            this.btnTogglePassword = new FontAwesome.Sharp.IconButton();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtConfirm = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,8 +44,6 @@
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.RegistBtn = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnTogglePassword = new FontAwesome.Sharp.IconButton();
-            this.btnToggleConfirm = new FontAwesome.Sharp.IconButton();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,6 +88,32 @@
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(482, 652);
             this.guna2CustomGradientPanel2.TabIndex = 4;
+            // 
+            // btnToggleConfirm
+            // 
+            this.btnToggleConfirm.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnToggleConfirm.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnToggleConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnToggleConfirm.IconSize = 25;
+            this.btnToggleConfirm.Location = new System.Drawing.Point(414, 447);
+            this.btnToggleConfirm.Name = "btnToggleConfirm";
+            this.btnToggleConfirm.Size = new System.Drawing.Size(30, 30);
+            this.btnToggleConfirm.TabIndex = 12;
+            this.btnToggleConfirm.UseVisualStyleBackColor = true;
+            this.btnToggleConfirm.Click += new System.EventHandler(this.btnToggleConfirm_Click);
+            // 
+            // btnTogglePassword
+            // 
+            this.btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnTogglePassword.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnTogglePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTogglePassword.IconSize = 25;
+            this.btnTogglePassword.Location = new System.Drawing.Point(414, 389);
+            this.btnTogglePassword.Name = "btnTogglePassword";
+            this.btnTogglePassword.Size = new System.Drawing.Size(30, 30);
+            this.btnTogglePassword.TabIndex = 11;
+            this.btnTogglePassword.UseVisualStyleBackColor = true;
+            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
             // 
             // txtUsername
             // 
@@ -170,7 +196,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(263, 583);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 15);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Login here";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -181,7 +207,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(109, 583);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 15);
+            this.label1.Size = new System.Drawing.Size(156, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "already have account?";
             // 
@@ -295,35 +321,9 @@
             this.txtPassword.Size = new System.Drawing.Size(334, 41);
             this.txtPassword.TabIndex = 1;
             // 
-            // btnTogglePassword
-            // 
-            this.btnTogglePassword.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnTogglePassword.IconColor = System.Drawing.Color.Black;
-            this.btnTogglePassword.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTogglePassword.Location = new System.Drawing.Point(424, 382);
-            this.btnTogglePassword.Name = "btnTogglePassword";
-            this.btnTogglePassword.Size = new System.Drawing.Size(43, 41);
-            this.btnTogglePassword.TabIndex = 11;
-            this.btnTogglePassword.Text = "iconButton1";
-            this.btnTogglePassword.UseVisualStyleBackColor = true;
-            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
-            // 
-            // btnToggleConfirm
-            // 
-            this.btnToggleConfirm.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnToggleConfirm.IconColor = System.Drawing.Color.Black;
-            this.btnToggleConfirm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnToggleConfirm.Location = new System.Drawing.Point(424, 445);
-            this.btnToggleConfirm.Name = "btnToggleConfirm";
-            this.btnToggleConfirm.Size = new System.Drawing.Size(43, 36);
-            this.btnToggleConfirm.TabIndex = 12;
-            this.btnToggleConfirm.Text = "iconButton2";
-            this.btnToggleConfirm.UseVisualStyleBackColor = true;
-            this.btnToggleConfirm.Click += new System.EventHandler(this.btnToggleConfirm_Click);
-            // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.guna2CustomGradientPanel1);

@@ -35,10 +35,10 @@
             this.LogoPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,6 +48,7 @@
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
             this.panelMenu.Controls.Add(this.BtnAboutUs);
             this.panelMenu.Controls.Add(this.BtnRecipe);
             this.panelMenu.Controls.Add(this.BtnHome);
@@ -153,6 +154,8 @@
             // 
             // panelTop
             // 
+            this.panelTop.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(82)))), ((int)(((byte)(53)))));
             this.panelTop.Controls.Add(this.lblUsername);
             this.panelTop.Controls.Add(this.lblTitleChildForm);
             this.panelTop.Controls.Add(this.iconCurrentChildForm);
@@ -160,17 +163,31 @@
             this.panelTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(65)))));
             this.panelTop.Location = new System.Drawing.Point(250, 0);
             this.panelTop.Name = "panelTop";
+            this.panelTop.Padding = new System.Windows.Forms.Padding(5);
             this.panelTop.Size = new System.Drawing.Size(950, 100);
             this.panelTop.TabIndex = 1;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Location = new System.Drawing.Point(851, 14);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(64, 25);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "label1";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTitleChildForm
             // 
             this.lblTitleChildForm.AutoSize = true;
             this.lblTitleChildForm.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(74, 38);
+            this.lblTitleChildForm.Location = new System.Drawing.Point(79, 43);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(64, 25);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -189,24 +206,16 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(250, 100);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(950, 603);
             this.panelDesktop.TabIndex = 2;
             // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(464, 38);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(51, 20);
-            this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "label1";
-            // 
             // PanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.panelDesktop);

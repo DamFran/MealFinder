@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MealFinder.View
-{
-    public partial class HomeControl : UserControl
+{   
+    public partial class Home : UserControl
     {
-        public HomeControl()
+        public Home()
         {
             InitializeComponent();
+
+            lblDeskripsi.AutoSize = true;
+            lblDeskripsi.MaximumSize = new Size(300, 0); // Atur lebar maksimum
+            lblDeskripsi.Text = "MealFinder adalah aplikasi mencari resep berdasarkan bahan yang tersedia oleh pengguna";
         }
     }
 }
