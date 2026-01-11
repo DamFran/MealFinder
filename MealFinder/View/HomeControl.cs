@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MealFinder.View
 {
-    public partial class Recipe : Form
+    public partial class HomeControl : UserControl
     {
-        public Recipe()
+        public HomeControl()
         {
             InitializeComponent();
         }
