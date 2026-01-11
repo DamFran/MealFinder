@@ -21,6 +21,9 @@ namespace MealFinder.View
         {
             InitializeComponent();
 
+
+            picRecipe.SizeMode = PictureBoxSizeMode.Zoom;
+
             // INIT CONTEXT
             productContext = new ProductContext();
             recipeContext = new RecipeContext();
@@ -260,7 +263,7 @@ namespace MealFinder.View
 
             picRecipe.Image?.Dispose();
             picRecipe.Image = Image.FromFile(fullPath);
-            picRecipe.SizeMode = PictureBoxSizeMode.Zoom;
+            
         }
        }
     }
