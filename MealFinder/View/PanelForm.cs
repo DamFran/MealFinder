@@ -40,22 +40,13 @@ namespace MealFinder.View
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            lblUsername.MaximumSize = new Size(panelTop.Width, 0);
+           
         }
 
         public PanelForm(User user) : this()
         {
             _currentUser = user;
             lblUsername.Text = user.Username;
-
-            if (user.Role != "admin")
-            {
-                BtnRecipe.Visible = false;
-            }
-            else
-            {
-                BtnRecipe.Visible = true;
-            }
         }
 
         private void SetButtonHoverStyle(IconButton button)
@@ -135,6 +126,29 @@ namespace MealFinder.View
 
         }
 
-      
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+                "Yakin ingin logout?",
+                "Konfirmasi Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                Logout();
+            }
+        }
+
+        private void Logout()
+        {
+            _currentUser = null;
+
+            Login login = new Login();
+            login.Show();
+
+            this.Close(); // PENTING: jangan Hide
+        }
     }
 }
