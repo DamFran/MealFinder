@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using MealFinder.Model;
+using MealFinder.Helper;
 
 namespace MealFinder.View
 {
@@ -16,6 +17,8 @@ namespace MealFinder.View
         public PanelForm()
         {
             InitializeComponent();
+
+            FileHelper.EnsureImagesCopied();
 
             // MATIKAN scaling WinForms (penyebab UI menciut)
             this.AutoScaleMode = AutoScaleMode.None;
