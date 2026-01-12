@@ -1,6 +1,6 @@
 ﻿namespace MealFinder.View
 {
-    partial class RecipeControl
+    partial class Recipe
     {
         /// <summary> 
         /// Required designer variable.
@@ -90,6 +90,7 @@
             this.dgvIngredients.Location = new System.Drawing.Point(3, 36);
             this.dgvIngredients.Name = "dgvIngredients";
             this.dgvIngredients.RowHeadersVisible = false;
+            this.dgvIngredients.RowHeadersWidth = 51;
             this.dgvIngredients.Size = new System.Drawing.Size(294, 495);
             this.dgvIngredients.TabIndex = 2;
             this.dgvIngredients.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -158,6 +159,7 @@
             this.dgvRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecipes.Location = new System.Drawing.Point(3, 36);
             this.dgvRecipes.Name = "dgvRecipes";
+            this.dgvRecipes.RowHeadersWidth = 51;
             this.dgvRecipes.Size = new System.Drawing.Size(294, 531);
             this.dgvRecipes.TabIndex = 1;
             // 
@@ -220,6 +222,7 @@
             this.txtRecipeDetail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRecipeDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRecipeDetail.Location = new System.Drawing.Point(3, 36);
+            this.txtRecipeDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRecipeDetail.Name = "txtRecipeDetail";
             this.txtRecipeDetail.PlaceholderText = "";
             this.txtRecipeDetail.SelectedText = "";
@@ -239,7 +242,7 @@
             this.lblRecipeName.Text = "Detail Resep";
             this.lblRecipeName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // RecipeControl
+            // Recipe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
@@ -247,7 +250,7 @@
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);
-            this.Name = "RecipeControl";
+            this.Name = "Recipe";
             this.Size = new System.Drawing.Size(950, 603);
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredients)).EndInit();

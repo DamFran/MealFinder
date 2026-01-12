@@ -8,16 +8,16 @@ using MealFinder.Model;
 
 namespace MealFinder.View
 {
-    public partial class RecipeControl : UserControl
+    public partial class Recipe : UserControl
     {
         private List<Product> products;
-        private List<Recipe> recipes;
+        private List<Model.Recipe> recipes;
 
         private ProductContext productContext;
         private RecipeContext recipeContext;
         private IngredientContext ingredientContext;
 
-        public RecipeControl()
+        public Recipe()
         {
             InitializeComponent();
 
@@ -31,6 +31,7 @@ namespace MealFinder.View
 
             LoadProducts();
             LoadRecipes();
+           
         }
 
         // ================= SETUP GRID =================
@@ -40,7 +41,23 @@ namespace MealFinder.View
             dgvIngredients.RowHeadersVisible = false;
             dgvIngredients.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            dgvIngredients.EnableHeadersVisualStyles = false;
+            dgvIngredients.ColumnHeadersHeightSizeMode =
+                DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvIngredients.ColumnHeadersHeight = 32;
+
+            dgvIngredients.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvIngredients.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvIngredients.ColumnHeadersDefaultCellStyle.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+
+            dgvIngredients.CellValueChanged += dgvIngredients_CellValueChanged;
+            dgvIngredients.CurrentCellDirtyStateChanged += dgvIngredients_CurrentCellDirtyStateChanged;
+
             dgvIngredients.Columns.Clear();
+
+
 
             dgvIngredients.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -53,18 +70,16 @@ namespace MealFinder.View
                 Name = "ProductName",
                 HeaderText = "Bahan",
                 ReadOnly = true,
-                FillWeight = 70
+                FillWeight = 75
             });
 
             dgvIngredients.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "Quantity",
                 HeaderText = "Jumlah",
-                FillWeight = 30
+                FillWeight = 25,
+                MinimumWidth = 80
             });
-
-            dgvIngredients.CellEndEdit += dgvIngredients_CellEndEdit;
-            dgvIngredients.EditingControlShowing += dgvIngredients_EditingControlShowing;
         }
 
         private void SetupRecipeGrid()
@@ -110,10 +125,12 @@ namespace MealFinder.View
                 dgvIngredients.Rows.Add(
                     p.ProductID,
                     p.ProductName,
-                    ""
+                    0
                 );
             }
         }
+
+    
 
         private void LoadRecipes()
         {
@@ -143,7 +160,13 @@ namespace MealFinder.View
         // ================= FILTER =================
         private void dgvIngredients_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            FilterRecipes();
+            if (dgvIngredients.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                var cell = dgvIngredients.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                if (cell.Value == null || cell.Value.ToString() == "")
+                    cell.Value = 0;
+            }
         }
 
         private Dictionary<string, int> GetSelectedIngredients()
@@ -213,8 +236,24 @@ namespace MealFinder.View
             }
         }
 
+
+        private void dgvIngredients_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvIngredients.IsCurrentCellDirty)
+                dgvIngredients.CommitEdit(DataGridViewDataErrorContexts.Commit);
+        }
+
+        private void dgvIngredients_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvIngredients.Columns[e.ColumnIndex].Name == "Quantity")
+            {
+                FilterRecipes();
+            }
+        }
+
+
         // ================= IMAGE =================
-        private Recipe GetSelectedRecipe()
+        private Model.Recipe GetSelectedRecipe()
         {
             if (dgvRecipes.CurrentRow == null)
                 return null;
@@ -238,7 +277,7 @@ namespace MealFinder.View
 
         private void ShowRecipeImage()
         {
-            Recipe recipe = GetSelectedRecipe();
+            Model.Recipe recipe = GetSelectedRecipe();
             if (recipe == null) return;
 
             if (string.IsNullOrWhiteSpace(recipe.ImagePath))
@@ -247,8 +286,13 @@ namespace MealFinder.View
                 return;
             }
 
+            // Ambil folder project (naik dari bin/Debug)
+            string projectRoot = Path.GetFullPath(
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..")
+            );
+
             string fullPath = Path.Combine(
-                Application.StartupPath,
+                projectRoot,
                 recipe.ImagePath.Replace("/", "\\")
             );
 
@@ -262,6 +306,6 @@ namespace MealFinder.View
             picRecipe.Image = Image.FromFile(fullPath);
             picRecipe.SizeMode = PictureBoxSizeMode.Zoom;
         }
-       }
+     }
     }
 
