@@ -271,6 +271,7 @@ namespace MealFinder.View
         private void dgvRecipes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ShowRecipeImage();
+            ShowRecipeDetail();
         }
 
         private void picRecipe_Click(object sender, EventArgs e)
@@ -309,6 +310,22 @@ namespace MealFinder.View
             picRecipe.Image = Image.FromFile(fullPath);
             
         }
-     }
+
+        // === SHOW RECIPE ===
+        private void ShowRecipeDetail()
+        {
+            var recipe = GetSelectedRecipe();
+            if (recipe == null)
+            {
+                txtRecipeDetail.Clear();
+                return;
+            }
+
+            txtRecipeDetail.Text = recipe.Description;
+        }
     }
+}
+
+
+
 
