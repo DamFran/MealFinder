@@ -12,15 +12,18 @@ namespace MealFinder.View
         private User _currentUser;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private UserControl currentControl;
+
+        // 🔥 SIMPAN INSTANCE CONTROL
+        private Home homeControl;
+        private Recipe recipeControl;
+        private TambahBahanControl tambahBahanControl;
+        private Team teamControl;
 
         public PanelForm()
         {
             InitializeComponent();
 
             FileHelper.EnsureImagesCopied();
-
-            // MATIKAN scaling WinForms (penyebab UI menciut)
             this.AutoScaleMode = AutoScaleMode.None;
 
             panelDesktop.Dock = DockStyle.Fill;
@@ -35,15 +38,11 @@ namespace MealFinder.View
             SetButtonHoverStyle(BtnRecipe);
             SetButtonHoverStyle(BtnAboutUs);
 
-            // Load Home default
-            OpenChildControl(new Home());
+            OpenHome();
 
-            this.MaximizeBox = false;        // Nonaktifkan maximize
-        
+            this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
-
-           
         }
 
         public PanelForm(User user) : this()
@@ -52,17 +51,87 @@ namespace MealFinder.View
             lblUsername.Text = user.Username;
         }
 
+        // ================= OPEN CONTROL =================
+
+        private void OpenHome()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (homeControl == null)
+                homeControl = new Home();
+
+            homeControl.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(homeControl);
+            lblTitleChildForm.Text = "Home";
+        }
+
+        public void OpenRecipeControl()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (recipeControl == null)
+                recipeControl = new Recipe();
+
+            recipeControl.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(recipeControl);
+            lblTitleChildForm.Text = "Recipe";
+        }
+
+        public void OpenTambahBahan()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (tambahBahanControl == null)
+                tambahBahanControl = new TambahBahanControl();
+
+            tambahBahanControl.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(tambahBahanControl);
+            lblTitleChildForm.Text = "Tambah Bahan";
+        }
+
+        public void OpenTeam()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (teamControl == null)
+                teamControl = new Team();
+
+            teamControl.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(teamControl);
+            lblTitleChildForm.Text = "About Us";
+        }
+
+        // 🔥 AKSES RECIPE DARI CONTROL LAIN
+        public Recipe RecipeControl => recipeControl;
+
+        // ================= MENU =================
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenHome();
+        }
+
+        private void BtnRecipe_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenRecipeControl();
+        }
+
+        private void BtnAboutUs_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenTeam();
+        }
+
+        // ================= UI STYLE =================
+
         private void SetButtonHoverStyle(IconButton button)
         {
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderSize = 0;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(56, 95, 65);
             button.FlatAppearance.MouseDownBackColor = Color.FromArgb(36, 70, 45);
-        }
-
-        private struct RGBColors
-        {
-            public static Color white = Color.White;
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -74,18 +143,7 @@ namespace MealFinder.View
 
             currentBtn.BackColor = Color.FromArgb(46, 82, 53);
             currentBtn.ForeColor = color;
-            currentBtn.TextAlign = ContentAlignment.MiddleCenter;
             currentBtn.IconColor = color;
-            currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-            currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-
-            leftBorderBtn.BackColor = color;
-            leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-            leftBorderBtn.Visible = true;
-            leftBorderBtn.BringToFront();
-
-            iconCurrentChildForm.IconChar = currentBtn.IconChar;
-            iconCurrentChildForm.IconColor = color;
         }
 
         private void DisableButton()
@@ -94,42 +152,10 @@ namespace MealFinder.View
 
             currentBtn.BackColor = Color.FromArgb(46, 82, 53);
             currentBtn.ForeColor = Color.Gainsboro;
-            currentBtn.TextAlign = ContentAlignment.MiddleLeft;
             currentBtn.IconColor = Color.Gainsboro;
-            currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
         }
 
-        // SPA LOADER (UserControl)
-        private void OpenChildControl(UserControl control)
-        {
-            panelDesktop.Controls.Clear();
-            control.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(control);
-            lblTitleChildForm.Text = control.Name;
-        }
-
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.white);
-            OpenChildControl(new Home());
-        }
-
-        private void BtnRecipe_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.white);
-
-            OpenChildControl(new Recipe());
-
-            
-        }
-
-        private void BtnAboutUs_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.white);
-            OpenChildControl(new Team());
-
-        }
+        // ================= LOGOUT =================
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -141,19 +167,15 @@ namespace MealFinder.View
             );
 
             if (confirm == DialogResult.Yes)
-            {
                 Logout();
-            }
         }
 
         private void Logout()
         {
             _currentUser = null;
-
             Login login = new Login();
             login.Show();
-
-            this.Close(); // PENTING: jangan Hide
+            this.Close();
         }
     }
 }

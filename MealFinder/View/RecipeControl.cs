@@ -128,12 +128,18 @@ namespace MealFinder.View
                 dgvIngredients.Rows.Add(
                     p.ProductID,
                     p.ProductName,
-                    0
+                    p.ProductStock, // ✅ STOK ASLI
+                    0               // jumlah yang mau dipakai
                 );
             }
         }
 
-    
+        public void ReloadBahanDapur()
+        {
+            LoadProducts();
+            FilterRecipes(); // optional, supaya recipe langsung update
+        }
+
 
         private void LoadRecipes()
         {
@@ -322,6 +328,15 @@ namespace MealFinder.View
             }
 
             txtRecipeDetail.Text = recipe.Description;
+        }
+
+        private void btnAddIngredient_Click(object sender, EventArgs e)
+        {
+            PanelForm mainForm = this.FindForm() as PanelForm;
+            if (mainForm != null)
+            {
+                mainForm.OpenTambahBahan();
+            }
         }
     }
 }

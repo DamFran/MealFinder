@@ -139,6 +139,12 @@
     <Compile Include="View\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TambahBahanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TambahBahanControl.Designer.cs">
+      <DependentUpon>TambahBahanControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TambahBahanControl.resx">
+      <DependentUpon>TambahBahanControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -216,7 +225,7 @@
     <Content Include="Images\tahugoreng.jpg" />
     <Content Include="Images\telurceplok.jpg" />
     <Content Include="Images\telurdadar.jpg" />
-    <Content Include="Images\telurorakarik.jpg" />
+    <Content Include="Images\orakariktelur.jpg" />
     <Content Include="Images\tempegoreng.jpg" />
     <Content Include="Images\tumissayur.jpg" />
   </ItemGroup>
