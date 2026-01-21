@@ -101,7 +101,5 @@ namespace MealFinder.Database
                 cmd.ExecuteNonQuery();
             }
         }
-
-
     }
 }

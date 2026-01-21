@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using MealFinder.Helper;
 
 namespace MealFinder.View
 {
@@ -36,8 +37,32 @@ namespace MealFinder.View
 
             LoadProducts();
             LoadRecipes();
-           
+
+            this.Load += Recipe_Load;
         }
+
+        private void Recipe_Load(object sender, EventArgs e)
+        {
+            ApplyRoleAccess();
+        }
+
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+
+            if (this.Visible)
+                ApplyRoleAccess();
+        }
+
+
+        private void ApplyRoleAccess()
+        {
+            bool isAdmin = Permission.IsAdmin;
+
+            btnTambahResep.Visible = isAdmin;
+            btnHapusResep.Visible = isAdmin;
+        }
+
 
         // ================= SETUP GRID =================
         private void SetupIngredientGrid()
@@ -473,11 +498,13 @@ namespace MealFinder.View
 
         private void btnTambahResep_Click(object sender, EventArgs e)
         {
-            PanelForm mainForm = this.FindForm() as PanelForm;
-            if (mainForm != null)
+            if (!Permission.IsAdmin)
             {
-                mainForm.OpenTambahResep();
+                MessageBox.Show("Akses ditolak!");
+                return;
             }
+
+            (FindForm() as PanelForm)?.OpenTambahResep();
         }
         public void ReloadRecipes()
         {
@@ -490,11 +517,13 @@ namespace MealFinder.View
 
         private void btnHapusResep_Click(object sender, EventArgs e)
         {
-            PanelForm mainForm = this.FindForm() as PanelForm;
-            if (mainForm != null)
+            if (!Permission.IsAdmin)
             {
-                mainForm.OpenHapusResep();
+                MessageBox.Show("Akses ditolak!");
+                return;
             }
+
+            (FindForm() as PanelForm)?.OpenHapusResep();
         }
         public void ReleaseImage()
         {

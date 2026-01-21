@@ -30,11 +30,11 @@ namespace MealFinder.Controller
                 return "Semua field wajib diisi";
 
             // 2. Name
-            if (name.Length < 3)
+            if (name.Trim().Length < 3)
                 return "Name minimal 3 karakter";
 
             // 3. Username
-            if (username.Length < 4)
+            if (username.Trim().Length < 4)
                 return "Username minimal 4 karakter";
 
             if (username.Contains(" "))
@@ -46,19 +46,21 @@ namespace MealFinder.Controller
 
             // 5. Password
             if (!IsStrongPassword(password))
-                return "Password minimal 8 karakter,\n"
-                     + "mengandung huruf besar, huruf kecil, dan angka";
+                return "Password minimal 8 karakter,\n" +
+                       "mengandung huruf besar, huruf kecil, dan angka";
 
             // 6. Konfirmasi password
             if (password != confirm)
                 return "Password dan konfirmasi password tidak sama";
 
+            // 7. Buat object User
             User user = new User
             {
                 Name = name.Trim(),
                 Username = username.Trim(),
                 Email = email.Trim(),
-                Password = password
+                Password = password,
+                Role = "User" // 🔥 DEFAULT ROLE
             };
 
             bool success = UserContext.Register(user);
@@ -80,10 +82,17 @@ namespace MealFinder.Controller
                 string.IsNullOrWhiteSpace(password))
                 return "Username dan Password wajib diisi";
 
-            user = UserContext.Login(username, password);
+            user = UserContext.Login(
+                username.Trim(),
+                password.Trim()
+            );
 
             if (user == null)
                 return "Username atau Password salah";
+
+            // 🔐 Safety check (kalau role kosong)
+            if (string.IsNullOrEmpty(user.Role))
+                user.Role = "User";
 
             return "OK";
         }

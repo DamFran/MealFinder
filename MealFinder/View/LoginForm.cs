@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MealFinder.Helper;
 
 namespace MealFinder.View
 {
@@ -17,8 +18,6 @@ namespace MealFinder.View
     {
         public Login()
         {
-            
-
             InitializeComponent();
 
 
@@ -66,15 +65,18 @@ namespace MealFinder.View
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             string result = AuthController.Login(
-                txtUsername.Text.Trim(),
-                txtPassword.Text.Trim(),
-                out User user
-            );
+        txtUsername.Text.Trim(),
+        txtPassword.Text.Trim(),
+        out User user
+    );
 
             if (result == "OK")
             {
+                // 🔥 INI BARIS PALING PENTING
+                Session.CurrentUser = user;
+
                 MessageBox.Show(
-                    "Login berhasil!",
+                    $"Login berhasil!",
                     "Sukses",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -90,7 +92,7 @@ namespace MealFinder.View
                     result,
                     "Login gagal",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.None
+                    MessageBoxIcon.Warning
                 );
             }
         }

@@ -97,6 +97,7 @@
     <Compile Include="Database\RecipeDB.cs" />
     <Compile Include="Database\UserDB.cs" />
     <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\Session.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />

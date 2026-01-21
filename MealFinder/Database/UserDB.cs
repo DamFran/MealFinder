@@ -16,7 +16,7 @@ namespace MealFinder.Database
             using (DbContext db = new DbContext())
             {
                 string checkSql = @"SELECT COUNT(*) FROM Users 
-                            WHERE Username=@u OR Email=@e";
+                                    WHERE Username=@u OR Email=@e";
 
                 SQLiteCommand check = new SQLiteCommand(checkSql, db.Conn);
                 check.Parameters.AddWithValue("@u", user.Username);
@@ -27,11 +27,11 @@ namespace MealFinder.Database
                     return false;
 
                 // DEFAULT ROLE
-                user.Role = "user";
+                user.Role = "User";
 
                 string sql = @"INSERT INTO Users 
-                      (Name, Username, Email, Password, Role)
-                      VALUES (@n,@u,@e,@p,@r)";
+                               (Name, Username, Email, Password, Role)
+                               VALUES (@n,@u,@e,@p,@r)";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
                 cmd.Parameters.AddWithValue("@n", user.Name);
@@ -45,17 +45,17 @@ namespace MealFinder.Database
             }
         }
 
-
         // ================= LOGIN =================
         public static User Login(string username, string password)
         {
             using (DbContext db = new DbContext())
             {
-                string sql = @"SELECT * FROM Users 
-                               WHERE Username=@e AND Password=@p";
+                string sql = @"SELECT UserID, Name, Username, Email, Password, Role 
+                               FROM Users 
+                               WHERE Username=@u AND Password=@p";
 
                 SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
-                cmd.Parameters.AddWithValue("@e", username);
+                cmd.Parameters.AddWithValue("@u", username);
                 cmd.Parameters.AddWithValue("@p", password);
 
                 SQLiteDataReader rd = cmd.ExecuteReader();
@@ -64,9 +64,11 @@ namespace MealFinder.Database
                     return new User
                     {
                         UserID = rd.GetInt32(0),
-                        Username = rd.GetString(1),
-                        Email = rd.GetString(2),
-                        Password = rd.GetString(3)
+                        Name = rd.GetString(1),
+                        Username = rd.GetString(2),
+                        Email = rd.GetString(3),
+                        Password = rd.GetString(4),
+                        Role = rd.GetString(5)
                     };
                 }
             }
