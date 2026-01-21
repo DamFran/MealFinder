@@ -79,6 +79,21 @@ namespace MealFinder.Database
             cmd.Parameters.AddWithValue("@name", name);
             cmd.ExecuteNonQuery();
         }
+        public static List<string> GetAllNames()
+        {
+            List<string> list = new List<string>();
+            using (DbContext db = new DbContext())
+            {
+                string sql = "SELECT ProductName FROM Products";
+                using (var cmd = new SQLiteCommand(sql, db.Conn))
+                using (var rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                        list.Add(rd.GetString(0));
+                }
+            }
+            return list;
+        }
 
     }
 }

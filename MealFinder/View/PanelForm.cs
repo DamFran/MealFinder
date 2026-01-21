@@ -17,6 +17,8 @@ namespace MealFinder.View
         private Home homeControl;
         private Recipe recipeControl;
         private TambahBahanControl tambahBahanControl;
+        private TambahResepControl tambahResepControl;
+
         private Team teamControl;
 
         public PanelForm()
@@ -88,6 +90,18 @@ namespace MealFinder.View
             panelDesktop.Controls.Add(tambahBahanControl);
             lblTitleChildForm.Text = "Tambah Bahan";
         }
+        public void OpenTambahResep()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (tambahResepControl == null)
+                tambahResepControl = new TambahResepControl();
+
+            tambahResepControl.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(tambahResepControl);
+            lblTitleChildForm.Text = "Tambah Resep";
+        }
+
 
         public void OpenTeam()
         {

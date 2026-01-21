@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dgvIngredients = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAddIngredient = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnTambahResep = new Guna.UI2.WinForms.Guna2Button();
             this.dgvRecipes = new System.Windows.Forms.DataGridView();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.picRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnMasak = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRecipeName = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnMasak = new Guna.UI2.WinForms.Guna2Button();
-            this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnHapusResep = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredients)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -67,27 +69,27 @@
             // 
             // dgvIngredients
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIngredients.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredients.ColumnHeadersHeight = 15;
             this.dgvIngredients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIngredients.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIngredients.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvIngredients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvIngredients.Location = new System.Drawing.Point(3, 36);
             this.dgvIngredients.Name = "dgvIngredients";
@@ -149,6 +151,8 @@
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel2.Controls.Add(this.btnHapusResep);
+            this.guna2GradientPanel2.Controls.Add(this.btnTambahResep);
             this.guna2GradientPanel2.Controls.Add(this.dgvRecipes);
             this.guna2GradientPanel2.Controls.Add(this.guna2HtmlLabel2);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(425, 16);
@@ -156,14 +160,31 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(200, 570);
             this.guna2GradientPanel2.TabIndex = 1;
             // 
+            // btnTambahResep
+            // 
+            this.btnTambahResep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambahResep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambahResep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambahResep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambahResep.FillColor = System.Drawing.Color.Silver;
+            this.btnTambahResep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambahResep.ForeColor = System.Drawing.Color.Black;
+            this.btnTambahResep.Location = new System.Drawing.Point(3, 537);
+            this.btnTambahResep.Name = "btnTambahResep";
+            this.btnTambahResep.Size = new System.Drawing.Size(194, 30);
+            this.btnTambahResep.TabIndex = 5;
+            this.btnTambahResep.Text = "Tambah Resep";
+            this.btnTambahResep.Click += new System.EventHandler(this.btnTambahResep_Click);
+            // 
             // dgvRecipes
             // 
             this.dgvRecipes.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvRecipes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRecipes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecipes.Location = new System.Drawing.Point(3, 36);
             this.dgvRecipes.Name = "dgvRecipes";
             this.dgvRecipes.RowHeadersWidth = 51;
-            this.dgvRecipes.Size = new System.Drawing.Size(194, 531);
+            this.dgvRecipes.Size = new System.Drawing.Size(194, 459);
             this.dgvRecipes.TabIndex = 1;
             // 
             // guna2HtmlLabel2
@@ -212,6 +233,47 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(300, 297);
             this.guna2GradientPanel4.TabIndex = 3;
             // 
+            // txtNote
+            // 
+            this.txtNote.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNote.BorderThickness = 0;
+            this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNote.DefaultText = "";
+            this.txtNote.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNote.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNote.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNote.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNote.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNote.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNote.ForeColor = System.Drawing.Color.Black;
+            this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNote.Location = new System.Drawing.Point(3, 112);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.PlaceholderText = "";
+            this.txtNote.ReadOnly = true;
+            this.txtNote.SelectedText = "";
+            this.txtNote.Size = new System.Drawing.Size(294, 146);
+            this.txtNote.TabIndex = 4;
+            // 
+            // btnMasak
+            // 
+            this.btnMasak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMasak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMasak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMasak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMasak.FillColor = System.Drawing.Color.Silver;
+            this.btnMasak.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasak.ForeColor = System.Drawing.Color.Black;
+            this.btnMasak.Location = new System.Drawing.Point(4, 264);
+            this.btnMasak.Name = "btnMasak";
+            this.btnMasak.Size = new System.Drawing.Size(292, 30);
+            this.btnMasak.TabIndex = 3;
+            this.btnMasak.Text = "Masak Resep";
+            this.btnMasak.Click += new System.EventHandler(this.btnMasak_Click);
+            // 
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.Gainsboro;
@@ -250,46 +312,20 @@
             this.lblRecipeName.Text = "Detail Resep";
             this.lblRecipeName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnMasak
+            // btnHapusResep
             // 
-            this.btnMasak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMasak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMasak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMasak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMasak.FillColor = System.Drawing.Color.Silver;
-            this.btnMasak.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMasak.ForeColor = System.Drawing.Color.Black;
-            this.btnMasak.Location = new System.Drawing.Point(4, 264);
-            this.btnMasak.Name = "btnMasak";
-            this.btnMasak.Size = new System.Drawing.Size(292, 30);
-            this.btnMasak.TabIndex = 3;
-            this.btnMasak.Text = "Masak Resep";
-            this.btnMasak.Click += new System.EventHandler(this.btnMasak_Click);
-            // 
-            // txtNote
-            // 
-            this.txtNote.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtNote.BorderThickness = 0;
-            this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNote.DefaultText = "";
-            this.txtNote.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNote.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNote.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNote.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNote.FillColor = System.Drawing.Color.Gainsboro;
-            this.txtNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNote.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNote.ForeColor = System.Drawing.Color.Black;
-            this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNote.Location = new System.Drawing.Point(3, 112);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.PlaceholderText = "";
-            this.txtNote.ReadOnly = true;
-            this.txtNote.SelectedText = "";
-            this.txtNote.Size = new System.Drawing.Size(294, 146);
-            this.txtNote.TabIndex = 4;
+            this.btnHapusResep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHapusResep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHapusResep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHapusResep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHapusResep.FillColor = System.Drawing.Color.Silver;
+            this.btnHapusResep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHapusResep.ForeColor = System.Drawing.Color.Black;
+            this.btnHapusResep.Location = new System.Drawing.Point(3, 501);
+            this.btnHapusResep.Name = "btnHapusResep";
+            this.btnHapusResep.Size = new System.Drawing.Size(194, 30);
+            this.btnHapusResep.TabIndex = 6;
+            this.btnHapusResep.Text = "Tambah Resep";
             // 
             // Recipe
             // 
@@ -328,5 +364,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvIngredients;
         private Guna.UI2.WinForms.Guna2Button btnMasak;
         private Guna.UI2.WinForms.Guna2TextBox txtNote;
+        private Guna.UI2.WinForms.Guna2Button btnTambahResep;
+        private Guna.UI2.WinForms.Guna2Button btnHapusResep;
     }
 }

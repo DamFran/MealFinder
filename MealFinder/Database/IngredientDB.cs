@@ -1,4 +1,4 @@
-﻿using MealFinder.Models;
+﻿using MealFinder.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,5 +61,20 @@ namespace MealFinder.Database
                 cmd.ExecuteNonQuery();
             }
         }
+        public static void Insert(Ingredient i, SQLiteConnection conn, SQLiteTransaction trans)
+        {
+            string sql = @"INSERT INTO Ingredients 
+                   (IngredientName, IngredientQuantity, RecipeID)
+                   VALUES (@n,@q,@r)";
+
+            using (var cmd = new SQLiteCommand(sql, conn, trans))
+            {
+                cmd.Parameters.AddWithValue("@n", i.IngredientName);
+                cmd.Parameters.AddWithValue("@q", i.IngredientQuantity);
+                cmd.Parameters.AddWithValue("@r", i.RecipeID);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

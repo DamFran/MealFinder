@@ -463,6 +463,23 @@ namespace MealFinder.View
             FilterRecipes();
         }
 
+        private void btnTambahResep_Click(object sender, EventArgs e)
+        {
+            PanelForm mainForm = this.FindForm() as PanelForm;
+            if (mainForm != null)
+            {
+                mainForm.OpenTambahResep();
+            }
+        }
+        public void ReloadRecipes()
+        {
+            // Ambil ulang dari database
+            recipes = recipeContext.GetAll();
+
+            // Biarkan RecipeControl yang memutuskan mau ngapain
+            FilterRecipes();
+        }
+
     }
 }
 

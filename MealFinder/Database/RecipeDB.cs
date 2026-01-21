@@ -77,5 +77,20 @@ namespace MealFinder.Database
 
             return recipe;
         }
+        public static int Insert(Recipe r, SQLiteConnection conn, SQLiteTransaction trans)
+        {
+            string sql = @"INSERT INTO Recipe (RecipeName, Description, ImagePath)
+                   VALUES (@n,@d,@i);
+                   SELECT last_insert_rowid();";
+
+            using (var cmd = new SQLiteCommand(sql, conn, trans))
+            {
+                cmd.Parameters.AddWithValue("@n", r.RecipeName);
+                cmd.Parameters.AddWithValue("@d", r.Description);
+                cmd.Parameters.AddWithValue("@i", r.ImagePath);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
     }
 }
