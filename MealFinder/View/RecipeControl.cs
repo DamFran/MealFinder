@@ -341,7 +341,72 @@ namespace MealFinder.View
             }
         }
 
-       
+        private void btnMasak_Click(object sender, EventArgs e)
+        {
+            MasakResep();
+        }
+        private void MasakResep()
+        {
+            var recipe = GetSelectedRecipe();
+            if (recipe == null)
+            {
+                MessageBox.Show("Pilih resep dulu!");
+                return;
+            }
+
+            var selected = GetSelectedIngredients();
+            if (selected.Count == 0)
+            {
+                MessageBox.Show("Isi jumlah bahan dulu!");
+                return;
+            }
+
+            using (DbContext db = new DbContext())
+            using (var trans = db.Conn.BeginTransaction())
+            {
+                try
+                {
+                    // VALIDASI STOK
+                    foreach (var item in selected)
+                    {
+                        int stok = ProductContext.GetStockByName(
+                            item.Key,
+                            db.Conn,
+                            trans
+                        );
+
+                        if (stok < item.Value)
+                        {
+                            throw new Exception(
+                                $"Stok {item.Key} tidak cukup!\nStok: {stok}, Dibutuhkan: {item.Value}");
+                        }
+                    }
+
+                    // POTONG STOK
+                    foreach (var item in selected)
+                    {
+                        ProductContext.ReduceStockByName(
+                            item.Key,
+                            item.Value,
+                            db.Conn,
+                            trans
+                        );
+                    }
+
+                    trans.Commit();
+                    MessageBox.Show("Resep berhasil dimasak!");
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    MessageBox.Show("Gagal memasak:\n" + ex.Message);
+                }
+            }
+
+            ReloadBahanDapur();
+            FilterRecipes();
+        }
+
     }
 }
 
