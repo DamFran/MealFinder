@@ -25,6 +25,7 @@ namespace MealFinder.View
 
             picRecipe.SizeMode = PictureBoxSizeMode.Zoom;
 
+
             // INIT CONTEXT
             productContext = new ProductContext();
             recipeContext = new RecipeContext();
@@ -316,12 +317,63 @@ namespace MealFinder.View
             var recipe = GetSelectedRecipe();
             if (recipe == null)
             {
-                txtRecipeDetail.Clear();
+                txtDescription.Clear();
+                txtNote.Clear();
                 return;
             }
 
-            txtRecipeDetail.Text = recipe.Description;
+            txtDescription.Text = recipe.Description;
+
+            var selected = GetSelectedIngredients();
+            var ingredients = IngredientContext.GetByRecipe(recipe.RecipeID);
+
+            List<string> missing = new List<string>();
+
+            foreach (var ing in ingredients)
+            {
+                if (!selected.ContainsKey(ing.IngredientName))
+                    missing.Add(ing.IngredientName);
+            }
+
+            if (missing.Count > 0)
+            {
+                txtNote.Text =
+                    "Note:\r" +
+                    "Bahan belum lengkap.\r\r\n" +
+                    "Bahan Yang Kurang:\r\n- " +
+                    string.Join("\r\n- ", missing);
+                txtNote.ForeColor = Color.DarkRed;
+            }
+            else
+            {
+                txtNote.Text =
+                    "Note:\r" +
+                    "Semua bahan sudah lengkap ✔";
+                txtNote.ForeColor = Color.DarkGreen;
+            }
         }
+
+
+
+        private bool IsRecipeComplete(Model.Recipe recipe, out List<string> missing)
+        {
+            missing = new List<string>();
+
+            var selected = GetSelectedIngredients();
+            var ingredients = IngredientContext.GetByRecipe(recipe.RecipeID);
+
+            foreach (var ing in ingredients)
+            {
+                if (!selected.ContainsKey(ing.IngredientName))
+                {
+                    missing.Add(ing.IngredientName);
+                }
+            }
+
+            return missing.Count == 0;
+        }
+
+
 
         private void btnAddIngredient_Click(object sender, EventArgs e)
         {
@@ -338,10 +390,23 @@ namespace MealFinder.View
         }
         private void MasakResep()
         {
+
             var recipe = GetSelectedRecipe();
             if (recipe == null)
             {
                 MessageBox.Show("Pilih resep dulu!");
+                return;
+            }
+
+            if (!IsRecipeComplete(recipe, out var missing))
+            {
+                MessageBox.Show(
+                    "Bahan belum lengkap!\nKurang:\n- " +
+                    string.Join("\n- ", missing),
+                    "Tidak bisa memasak",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 

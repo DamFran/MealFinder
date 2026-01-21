@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dgvIngredients = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAddIngredient = new Guna.UI2.WinForms.Guna2Button();
@@ -41,9 +41,10 @@
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.picRecipe = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.txtRecipeDetail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRecipeName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnMasak = new Guna.UI2.WinForms.Guna2Button();
+            this.txtNote = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredients)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -66,27 +67,27 @@
             // 
             // dgvIngredients
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvIngredients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvIngredients.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIngredients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvIngredients.ColumnHeadersHeight = 15;
             this.dgvIngredients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIngredients.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIngredients.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvIngredients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvIngredients.Location = new System.Drawing.Point(3, 36);
             this.dgvIngredients.Name = "dgvIngredients";
@@ -202,38 +203,39 @@
             // guna2GradientPanel4
             // 
             this.guna2GradientPanel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel4.Controls.Add(this.txtNote);
             this.guna2GradientPanel4.Controls.Add(this.btnMasak);
-            this.guna2GradientPanel4.Controls.Add(this.txtRecipeDetail);
+            this.guna2GradientPanel4.Controls.Add(this.txtDescription);
             this.guna2GradientPanel4.Controls.Add(this.lblRecipeName);
             this.guna2GradientPanel4.Location = new System.Drawing.Point(633, 289);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
             this.guna2GradientPanel4.Size = new System.Drawing.Size(300, 297);
             this.guna2GradientPanel4.TabIndex = 3;
             // 
-            // txtRecipeDetail
+            // txtDescription
             // 
-            this.txtRecipeDetail.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtRecipeDetail.BorderThickness = 0;
-            this.txtRecipeDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRecipeDetail.DefaultText = "";
-            this.txtRecipeDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRecipeDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRecipeDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRecipeDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRecipeDetail.FillColor = System.Drawing.Color.Gainsboro;
-            this.txtRecipeDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRecipeDetail.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtRecipeDetail.ForeColor = System.Drawing.Color.Black;
-            this.txtRecipeDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRecipeDetail.Location = new System.Drawing.Point(3, 36);
-            this.txtRecipeDetail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtRecipeDetail.Multiline = true;
-            this.txtRecipeDetail.Name = "txtRecipeDetail";
-            this.txtRecipeDetail.PlaceholderText = "";
-            this.txtRecipeDetail.ReadOnly = true;
-            this.txtRecipeDetail.SelectedText = "";
-            this.txtRecipeDetail.Size = new System.Drawing.Size(294, 258);
-            this.txtRecipeDetail.TabIndex = 1;
+            this.txtDescription.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtDescription.BorderThickness = 0;
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Location = new System.Drawing.Point(3, 36);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.Size = new System.Drawing.Size(294, 68);
+            this.txtDescription.TabIndex = 1;
             // 
             // lblRecipeName
             // 
@@ -263,6 +265,31 @@
             this.btnMasak.TabIndex = 3;
             this.btnMasak.Text = "Masak Resep";
             this.btnMasak.Click += new System.EventHandler(this.btnMasak_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtNote.BorderThickness = 0;
+            this.txtNote.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNote.DefaultText = "";
+            this.txtNote.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNote.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNote.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNote.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNote.FillColor = System.Drawing.Color.Gainsboro;
+            this.txtNote.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNote.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNote.ForeColor = System.Drawing.Color.Black;
+            this.txtNote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNote.Location = new System.Drawing.Point(3, 112);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.PlaceholderText = "";
+            this.txtNote.ReadOnly = true;
+            this.txtNote.SelectedText = "";
+            this.txtNote.Size = new System.Drawing.Size(294, 146);
+            this.txtNote.TabIndex = 4;
             // 
             // Recipe
             // 
@@ -297,8 +324,9 @@
         private Guna.UI2.WinForms.Guna2Button btnAddIngredient;
         private System.Windows.Forms.DataGridView dgvRecipes;
         private Guna.UI2.WinForms.Guna2PictureBox picRecipe;
-        private Guna.UI2.WinForms.Guna2TextBox txtRecipeDetail;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2DataGridView dgvIngredients;
         private Guna.UI2.WinForms.Guna2Button btnMasak;
+        private Guna.UI2.WinForms.Guna2TextBox txtNote;
     }
 }
