@@ -52,10 +52,18 @@ namespace MealFinder.View
         // ================= SETUP GRID =================
         private void SetupGrid()
         {
+            dgvHistory.Dock = DockStyle.Fill;
             dgvHistory.AllowUserToAddRows = false;
             dgvHistory.RowHeadersVisible = false;
             dgvHistory.ReadOnly = true;
+            dgvHistory.ScrollBars = ScrollBars.Both;
+
             dgvHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvHistory.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvHistory.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgvHistory.ColumnHeadersHeightSizeMode =
+                DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
             dgvHistory.Columns.Clear();
 
