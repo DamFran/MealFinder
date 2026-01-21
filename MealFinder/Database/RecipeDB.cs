@@ -91,6 +91,17 @@ namespace MealFinder.Database
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+        public void Delete(int recipeId)
+        {
+            using (DbContext db = new DbContext())
+            {
+                string sql = "DELETE FROM Recipe WHERE RecipeID=@id";
+                SQLiteCommand cmd = new SQLiteCommand(sql, db.Conn);
+                cmd.Parameters.AddWithValue("@id", recipeId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
 
     }
 }

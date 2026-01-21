@@ -40,6 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -68,7 +69,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(30, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 23);
+            this.label2.Size = new System.Drawing.Size(129, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "NIM    : 24.11.6137";
             // 
@@ -79,7 +80,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(30, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 23);
+            this.label1.Size = new System.Drawing.Size(143, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nama : Adam Zhafran";
             // 
@@ -90,7 +91,7 @@
             this.lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.Location = new System.Drawing.Point(15, 32);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(158, 28);
+            this.lbl.Size = new System.Drawing.Size(128, 21);
             this.lbl.TabIndex = 0;
             this.lbl.Text = "UI/UX Designer";
             // 
@@ -117,7 +118,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 23);
+            this.label3.Size = new System.Drawing.Size(129, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "NIM    : 24.11.6117";
             // 
@@ -128,7 +129,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(30, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 23);
+            this.label4.Size = new System.Drawing.Size(159, 19);
             this.label4.TabIndex = 2;
             this.label4.Text = "Nama : M. Imam Rizki D.";
             // 
@@ -139,7 +140,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(15, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 28);
+            this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Backend 1";
             // 
@@ -148,6 +149,7 @@
             this.guna2GradientPanel3.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel3.BorderRadius = 10;
             this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.label9);
             this.guna2GradientPanel3.Controls.Add(this.label6);
             this.guna2GradientPanel3.Controls.Add(this.label7);
             this.guna2GradientPanel3.Controls.Add(this.label8);
@@ -166,7 +168,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(30, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 23);
+            this.label6.Size = new System.Drawing.Size(129, 19);
             this.label6.TabIndex = 3;
             this.label6.Text = "NIM    : 24.11.6118";
             // 
@@ -177,7 +179,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(30, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 23);
+            this.label7.Size = new System.Drawing.Size(92, 19);
             this.label7.TabIndex = 2;
             this.label7.Text = "Nama : Takwa";
             // 
@@ -188,9 +190,20 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(15, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 28);
+            this.label8.Size = new System.Drawing.Size(88, 21);
             this.label8.TabIndex = 0;
             this.label8.Text = "Backend 2";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 53);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 21);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "UI/UX Designer";
             // 
             // Team
             // 
@@ -226,5 +239,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

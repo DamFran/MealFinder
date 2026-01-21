@@ -307,8 +307,16 @@ namespace MealFinder.View
             }
 
             picRecipe.Image?.Dispose();
-            picRecipe.Image = Image.FromFile(fullPath);
-            
+            picRecipe.Image = null;
+
+            byte[] imgBytes = File.ReadAllBytes(fullPath);
+            using (var ms = new MemoryStream(imgBytes))
+            {
+                picRecipe.Image = Image.FromStream(ms);
+            }
+
+            picRecipe.SizeMode = PictureBoxSizeMode.Zoom;
+
         }
 
         // === SHOW RECIPE ===
@@ -480,6 +488,19 @@ namespace MealFinder.View
             FilterRecipes();
         }
 
+        private void btnHapusResep_Click(object sender, EventArgs e)
+        {
+            PanelForm mainForm = this.FindForm() as PanelForm;
+            if (mainForm != null)
+            {
+                mainForm.OpenHapusResep();
+            }
+        }
+        public void ReleaseImage()
+        {
+            picRecipe.Image?.Dispose();
+            picRecipe.Image = null;
+        }
     }
 }
 

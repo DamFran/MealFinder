@@ -170,6 +170,9 @@
     <EmbeddedResource Include="View\AboutUsControl.resx">
       <DependentUpon>AboutUsControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\HapusResepControl.resx">
+      <DependentUpon>HapusResepControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
     </EmbeddedResource>

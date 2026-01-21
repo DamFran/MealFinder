@@ -18,6 +18,7 @@ namespace MealFinder.View
         private Recipe recipeControl;
         private TambahBahanControl tambahBahanControl;
         private TambahResepControl tambahResepControl;
+        private HapusResepControl hapusResepControl;
 
         private Team teamControl;
 
@@ -101,6 +102,20 @@ namespace MealFinder.View
             panelDesktop.Controls.Add(tambahResepControl);
             lblTitleChildForm.Text = "Tambah Resep";
         }
+        public void OpenHapusResep()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (RecipeControl != null)
+                RecipeControl.ReleaseImage(); // 🔥 PENTING
+
+            var hapus = new HapusResepControl();
+            hapus.Dock = DockStyle.Fill;
+
+            panelDesktop.Controls.Add(hapus);
+            lblTitleChildForm.Text = "Hapus Resep";
+        }
+
 
 
         public void OpenTeam()
