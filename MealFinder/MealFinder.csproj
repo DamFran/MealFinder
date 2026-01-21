@@ -116,6 +116,12 @@
     <Compile Include="View\HapusResepControl.Designer.cs">
       <DependentUpon>HapusResepControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\HistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\HistoryControl.Designer.cs">
+      <DependentUpon>HistoryControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\HapusResepControl.resx">
       <DependentUpon>HapusResepControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HistoryControl.resx">
+      <DependentUpon>HistoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>

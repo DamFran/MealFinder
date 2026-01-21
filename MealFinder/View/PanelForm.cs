@@ -19,6 +19,8 @@ namespace MealFinder.View
         private TambahBahanControl tambahBahanControl;
         private TambahResepControl tambahResepControl;
         private HapusResepControl hapusResepControl;
+        private History historyControl;
+
 
         private Team teamControl;
 
@@ -40,6 +42,7 @@ namespace MealFinder.View
             SetButtonHoverStyle(BtnHome);
             SetButtonHoverStyle(BtnRecipe);
             SetButtonHoverStyle(BtnAboutUs);
+            SetButtonHoverStyle(btnHistory);
 
             OpenHome();
 
@@ -56,6 +59,11 @@ namespace MealFinder.View
 
         // ================= OPEN CONTROL =================
 
+        private void UpdateHeader(IconChar icon, string title)
+        {
+            iconCurrentChildForm.IconChar = icon;
+            lblTitleChildForm.Text = title;
+        }
         private void OpenHome()
         {
             panelDesktop.Controls.Clear();
@@ -65,7 +73,8 @@ namespace MealFinder.View
 
             homeControl.Dock = DockStyle.Fill;
             panelDesktop.Controls.Add(homeControl);
-            lblTitleChildForm.Text = "Home";
+
+            UpdateHeader(IconChar.Home, "Home");
         }
 
         public void OpenRecipeControl()
@@ -77,7 +86,9 @@ namespace MealFinder.View
 
             recipeControl.Dock = DockStyle.Fill;
             panelDesktop.Controls.Add(recipeControl);
-            lblTitleChildForm.Text = "Recipe";
+            
+
+            UpdateHeader(IconChar.BowlFood, "Recipe");
         }
 
         public void OpenTambahBahan()
@@ -127,7 +138,22 @@ namespace MealFinder.View
 
             teamControl.Dock = DockStyle.Fill;
             panelDesktop.Controls.Add(teamControl);
-            lblTitleChildForm.Text = "About Us";
+            
+
+            UpdateHeader(IconChar.Users, "About Us");
+        }
+
+        public void OpenHistory()
+        {
+            panelDesktop.Controls.Clear();
+
+            if (historyControl == null)
+                historyControl = new History();
+
+           
+            panelDesktop.Controls.Add(historyControl);
+
+            UpdateHeader(IconChar.History, "History");
         }
 
         // 🔥 AKSES RECIPE DARI CONTROL LAIN
@@ -151,6 +177,11 @@ namespace MealFinder.View
         {
             ActivateButton(sender, Color.White);
             OpenTeam();
+        }
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.White);
+            OpenHistory();
         }
 
         // ================= UI STYLE =================
@@ -206,5 +237,7 @@ namespace MealFinder.View
             login.Show();
             this.Close();
         }
+
+      
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelForm));
             this.panelMenu = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnHistory = new FontAwesome.Sharp.IconButton();
             this.BtnAboutUs = new FontAwesome.Sharp.IconButton();
             this.BtnRecipe = new FontAwesome.Sharp.IconButton();
             this.BtnHome = new FontAwesome.Sharp.IconButton();
@@ -51,6 +52,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(70)))), ((int)(((byte)(44)))));
+            this.panelMenu.Controls.Add(this.btnHistory);
             this.panelMenu.Controls.Add(this.BtnAboutUs);
             this.panelMenu.Controls.Add(this.BtnRecipe);
             this.panelMenu.Controls.Add(this.BtnHome);
@@ -64,6 +66,29 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 703);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHistory.FlatAppearance.BorderSize = 0;
+            this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHistory.IconChar = FontAwesome.Sharp.IconChar.History;
+            this.btnHistory.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnHistory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.Location = new System.Drawing.Point(0, 294);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.btnHistory.Size = new System.Drawing.Size(250, 60);
+            this.btnHistory.TabIndex = 4;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // BtnAboutUs
             // 
@@ -173,6 +198,7 @@
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -182,10 +208,10 @@
             this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.btnLogout.IconColor = System.Drawing.Color.Gainsboro;
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLogout.IconSize = 20;
-            this.btnLogout.Location = new System.Drawing.Point(909, 35);
+            this.btnLogout.IconSize = 25;
+            this.btnLogout.Location = new System.Drawing.Point(908, 42);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(22, 22);
+            this.btnLogout.Size = new System.Drawing.Size(25, 25);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -196,10 +222,10 @@
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblUsername.Location = new System.Drawing.Point(675, 9);
+            this.lblUsername.Location = new System.Drawing.Point(653, 35);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(256, 20);
+            this.lblUsername.Size = new System.Drawing.Size(256, 32);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "label1";
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,9 +235,9 @@
             this.lblTitleChildForm.AutoSize = true;
             this.lblTitleChildForm.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(79, 43);
+            this.lblTitleChildForm.Location = new System.Drawing.Point(74, 39);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(52, 20);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(64, 25);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -239,7 +265,7 @@
             // 
             // PanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.panelDesktop);
@@ -274,5 +300,6 @@
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label lblUsername;
         private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnHistory;
     }
 }
