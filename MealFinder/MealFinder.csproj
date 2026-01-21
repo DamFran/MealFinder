@@ -92,12 +92,14 @@
   <ItemGroup>
     <Compile Include="Controller\AuthController.cs" />
     <Compile Include="Database\DbContext.cs" />
+    <Compile Include="Database\HistoryDB.cs" />
     <Compile Include="Database\IngredientDB.cs" />
     <Compile Include="Database\ProductDB.cs" />
     <Compile Include="Database\RecipeDB.cs" />
     <Compile Include="Database\UserDB.cs" />
     <Compile Include="Helper\FileHelper.cs" />
     <Compile Include="Helper\Session.cs" />
+    <Compile Include="Model\History.cs" />
     <Compile Include="Model\Ingredient.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Recipe.cs" />
@@ -236,7 +238,7 @@
     <Content Include="Images\ayamkecap.jpg" />
     <Content Include="Images\ayamricarica.jpg" />
     <Content Include="Images\bakwan.jpg" />
-    <Content Include="Images\caypcay.jpg" />
+    <Content Include="Images\capcay.jpg" />
     <Content Include="Images\ikanbakar.jpg" />
     <Content Include="Images\ikangoreng.jpg" />
     <Content Include="Images\miegoreng.jpg" />

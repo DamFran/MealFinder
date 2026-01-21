@@ -471,6 +471,14 @@ namespace MealFinder.View
                         }
                     }
 
+                    HistoryDB.AddHistory(
+                        Session.CurrentUser.UserID,   // 🔥 USER YANG LOGIN
+                        recipe.RecipeID,
+                        recipe.RecipeName,
+                        db.Conn,
+                        trans
+                     );
+
                     // POTONG STOK
                     foreach (var item in selected)
                     {
@@ -483,6 +491,8 @@ namespace MealFinder.View
                     }
 
                     trans.Commit();
+
+                    
                     MessageBox.Show("Resep berhasil dimasak!");
                 }
                 catch (Exception ex)

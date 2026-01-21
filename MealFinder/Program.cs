@@ -19,6 +19,8 @@ namespace MealFinder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DbContext.InitializeDatabase();
+
             Application.Run(new Login());
         }
     }

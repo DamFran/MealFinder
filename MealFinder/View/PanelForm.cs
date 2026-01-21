@@ -49,6 +49,28 @@ namespace MealFinder.View
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            this.Load += History_Load;
+        }
+
+        private void History_Load(object sender, EventArgs e)
+        {
+            ApplyRoleAccess();
+        }
+
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
+
+            if (this.Visible)
+                ApplyRoleAccess();
+        }
+
+        private void ApplyRoleAccess()
+        {
+            bool isUser = Permission.IsUser;
+
+            btnHistory.Visible = isUser;
         }
 
         public PanelForm(User user) : this()
@@ -152,6 +174,8 @@ namespace MealFinder.View
 
            
             panelDesktop.Controls.Add(historyControl);
+
+            historyControl.ReloadHistory();
 
             UpdateHeader(IconChar.History, "History");
         }

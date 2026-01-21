@@ -13,9 +13,14 @@ namespace MealFinder.Helper
     }
     public static class Permission
     {
-        public static bool IsAdmin =>
+     public static bool IsAdmin =>
             Session.CurrentUser?.Role?
                 .Trim()
                 .Equals("admin", StringComparison.OrdinalIgnoreCase) == true;
+    
+    public static bool IsUser =>
+            Session.CurrentUser?.Role?
+                .Trim()
+                .Equals("user", StringComparison.OrdinalIgnoreCase) == true;
     }
 }

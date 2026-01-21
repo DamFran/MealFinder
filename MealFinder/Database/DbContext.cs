@@ -1,13 +1,16 @@
-﻿using System;
+﻿using MealFinder.Model;
+using MealFinder.View;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MealFinder.Model;
-using System.Data;
-using System.Data.SQLite;
-using System.IO;
+using System.Windows.Input;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MealFinder.Database
 {
@@ -15,15 +18,10 @@ namespace MealFinder.Database
     {
         private SQLiteConnection _conn;
 
-        public SQLiteConnection Conn
-        {
-            get { return _conn ?? (_conn = GetOpenConnection()); }
-        }
+        public SQLiteConnection Conn => _conn;
 
-        private SQLiteConnection GetOpenConnection()
+        public DbContext()
         {
-            SQLiteConnection conn = null;
-
             try
             {
                 string projectDir = Path.GetFullPath(
@@ -34,30 +32,25 @@ namespace MealFinder.Database
                 string dbName = Path.Combine(dbPath, "MealFinder.db");
 
                 if (!Directory.Exists(dbPath))
-                {
                     Directory.CreateDirectory(dbPath);
-                }
 
-                string connectionString = $"Data Source={dbName};Version=3;";
+                string cs =
+                    $"Data Source={dbName};Version=3;Busy Timeout=5000;";
 
-                conn = new SQLiteConnection(connectionString);
-                conn.Open();
-
-                CreateTables(conn);
+                _conn = new SQLiteConnection(cs);
+                _conn.Open();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "DB Error");
             }
-
-            return conn;
         }
 
-
-        // ================= CREATE TABLE =================
-        private void CreateTables(SQLiteConnection conn)
+        // ================= INIT DB (CALL ONCE) =================
+        public static void InitializeDatabase()
         {
-            using (SQLiteCommand cmd = new SQLiteCommand(conn))
+            using (var db = new DbContext())
+            using (var cmd = new SQLiteCommand(db.Conn))
             {
                 // USERS
                 cmd.CommandText = @"
@@ -71,7 +64,7 @@ namespace MealFinder.Database
                 );";
                 cmd.ExecuteNonQuery();
 
-                // ================= DEFAULT ADMIN =================
+                // DEFAULT ADMIN (ONLY ONCE)
                 cmd.CommandText = @"
                 INSERT INTO Users (Name, Username, Email, Password, Role)
                 SELECT 'Administrator', 'admin', 'admin@admin.com', 'admin123', 'admin'
@@ -105,8 +98,18 @@ namespace MealFinder.Database
                     IngredientID INTEGER PRIMARY KEY AUTOINCREMENT,
                     IngredientName TEXT NOT NULL,
                     IngredientQuantity TEXT,
-                    RecipeID INTEGER NOT NULL,
-                    FOREIGN KEY (RecipeID) REFERENCES Recipes(RecipeID)
+                    RecipeID INTEGER NOT NULL
+                );";
+                cmd.ExecuteNonQuery();
+
+                // HISTORY
+                cmd.CommandText = @"
+                CREATE TABLE IF NOT EXISTS History (
+                    HistoryID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UserID INTEGER,
+                    RecipeID INTEGER,
+                    RecipeName TEXT,
+                    CreatedAt TEXT
                 );";
                 cmd.ExecuteNonQuery();
             }
@@ -117,18 +120,10 @@ namespace MealFinder.Database
         {
             if (_conn != null)
             {
-                try
-                {
-                    if (_conn.State != ConnectionState.Closed)
-                        _conn.Close();
-                }
-                finally
-                {
-                    _conn.Dispose();
-                }
+                _conn.Close();
+                _conn.Dispose();
+                _conn = null;
             }
-
-            GC.SuppressFinalize(this);
         }
     }
 }
