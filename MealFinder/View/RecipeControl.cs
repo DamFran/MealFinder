@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MealFinder.Database;
+using MealFinder.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using MealFinder.Database;
-using MealFinder.Model;
 
 namespace MealFinder.View
 {
@@ -213,30 +214,19 @@ namespace MealFinder.View
             foreach (var recipe in recipes)
             {
                 var ingredients = IngredientContext.GetByRecipe(recipe.RecipeID);
-                bool canMake = true;
+
+                bool match = false;
 
                 foreach (var ing in ingredients)
                 {
-                    if (!selectedIngredients.ContainsKey(ing.IngredientName))
+                    if (selectedIngredients.ContainsKey(ing.IngredientName))
                     {
-                        canMake = false;
-                        break;
-                    }
-
-                    if (!int.TryParse(ing.IngredientQuantity, out int requiredQty))
-                    {
-                        canMake = false;
-                        break;
-                    }
-
-                    if (selectedIngredients[ing.IngredientName] < requiredQty)
-                    {
-                        canMake = false;
+                        match = true;
                         break;
                     }
                 }
 
-                if (canMake)
+                if (match)
                 {
                     dgvRecipes.Rows.Add(
                         recipe.RecipeID,
@@ -246,6 +236,7 @@ namespace MealFinder.View
                 }
             }
         }
+
 
 
         private void dgvIngredients_CurrentCellDirtyStateChanged(object sender, EventArgs e)
