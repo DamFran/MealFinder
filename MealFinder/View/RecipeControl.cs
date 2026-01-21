@@ -49,18 +49,12 @@ namespace MealFinder.View
                 DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgvIngredients.ColumnHeadersHeight = 32;
 
-            dgvIngredients.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvIngredients.ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro;
             dgvIngredients.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             dgvIngredients.ColumnHeadersDefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleCenter;
 
-
-            dgvIngredients.CellValueChanged += dgvIngredients_CellValueChanged;
-            dgvIngredients.CurrentCellDirtyStateChanged += dgvIngredients_CurrentCellDirtyStateChanged;
-
             dgvIngredients.Columns.Clear();
-
-
 
             dgvIngredients.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -73,7 +67,15 @@ namespace MealFinder.View
                 Name = "ProductName",
                 HeaderText = "Bahan",
                 ReadOnly = true,
-                FillWeight = 75
+                FillWeight = 50
+            });
+
+            dgvIngredients.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Stock",
+                HeaderText = "Stock",
+                ReadOnly = true,
+                FillWeight = 25
             });
 
             dgvIngredients.Columns.Add(new DataGridViewTextBoxColumn
@@ -83,12 +85,18 @@ namespace MealFinder.View
                 FillWeight = 25,
                 MinimumWidth = 80
             });
+
+            dgvIngredients.CellValueChanged += dgvIngredients_CellValueChanged;
+            dgvIngredients.CurrentCellDirtyStateChanged += dgvIngredients_CurrentCellDirtyStateChanged;
+            dgvIngredients.EditingControlShowing += dgvIngredients_EditingControlShowing;
         }
+
 
         private void SetupRecipeGrid()
         {
             dgvRecipes.AllowUserToAddRows = false;
             dgvRecipes.RowHeadersVisible = false;
+            dgvRecipes.ColumnHeadersVisible = false;
             dgvRecipes.ReadOnly = true;
             dgvRecipes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -103,19 +111,13 @@ namespace MealFinder.View
             dgvRecipes.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "RecipeName",
-                HeaderText = "Recipe",
-                FillWeight = 40
-            });
-
-            dgvRecipes.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Description",
-                HeaderText = "Deskripsi",
-                FillWeight = 60
+                HeaderText = "Resep",
+                FillWeight = 100
             });
 
             dgvRecipes.CellClick += dgvRecipes_CellClick;
         }
+
 
         // ================= LOAD DATA =================
         private void LoadProducts()
@@ -338,6 +340,8 @@ namespace MealFinder.View
                 mainForm.OpenTambahBahan();
             }
         }
+
+       
     }
 }
 
